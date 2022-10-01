@@ -265,9 +265,12 @@ def installer(package, package_name=None):
             if not is_installed(package):
                 sprint(f"\n{info}Installing {package}{nc}")
                 if pacman=="pacman":
-                    shell(f"sudo {pacman} -S {package_name}")
+                    shell(f"sudo {pacman} -S {package_name} --noconfirm")
                 elif pacman=="apk":
-                    shell(f"sudo {pacman} add {package_name}")
+                    if is_installed("sudo"):
+                        shell(f"sudo {pacman} add {package_name}")
+                    else:
+                        shell(f"{pacman} add -y {package_name}")
                 elif is_installed("sudo"):
                     shell(f"sudo {pacman} install -y {package_name}")
                 else:
@@ -503,7 +506,7 @@ def nr_token():
     while True:
         if isfile(f"{home}/.config/ngrok/ngrok.yml") or isfile(f"{home}/.ngrok2/ngrok.yml"):
              break
-        has_token = input(f"\n{ask}Do you have ngrok authtoken? [y/n/help]: {green}")
+        has_token = input(f"\n{ask}Do you have ngrok authtoken? [y/N/help]: {green}")
         if has_token == "y":
             token = input(f"\n{ask}Enter your ngrok authtoken: {green}")
             shell(f"{nr_command} config add-authtoken {token}")
@@ -525,7 +528,7 @@ def lx_token():
         status = shell(f"{lx_command} account status", True).stdout.decode("utf-8").strip().lower()
         if not "error" in status:
             break
-        has_token = input(f"\n{ask}Do you have loclx access token? [y/n/help]: {green}")
+        has_token = input(f"\n{ask}Do you have loclx access token? [y/N/help]: {green}")
         if has_token == "y":
             shell(f"{lx_command} account login")
             break
@@ -936,7 +939,7 @@ def server():
         sleep(1)
     lhr_success = False
     for i in range(10):
-        lhr_url = grep("(https://[-0-9a-z.]*.lhrtunnel.link)", lhr_file)
+        lhr_url = grep("(https://[-0-9a-z.]*.lhr.life)", lhr_file)
         if lhr_url != "":
             lhr_success = True
             break
