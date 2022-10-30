@@ -1,7 +1,7 @@
 <h1 align="center">MaxPhisher</h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-1.0-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Version-1.1-green?style=for-the-badge">
   <img src="https://img.shields.io/github/stars/KasRoudra/MaxPhisher?style=for-the-badge&color=orange">
   <img src="https://img.shields.io/github/forks/KasRoudra/MaxPhisher?color=cyan&style=for-the-badge&color=purple">
   <img src="https://img.shields.io/github/watchers/KasRoudra/MaxPhisher?color=cyan&style=for-the-badge&color=purple">
@@ -11,7 +11,7 @@
 <br>
 <br>
   <img src="https://img.shields.io/badge/Author-KasRoudra-purple?style=flat-square">
-  <img src="https://img.shields.io/badge/Open%20Source-80%25-cyan?style=flat-square">
+  <img src="https://img.shields.io/badge/Open%20Source-yes-cyan?style=flat-square">
   <img src="https://img.shields.io/badge/Made%20in-Bangladesh-green?colorA=%23ff0000&colorB=%23017e40&style=flat-square">
   <img src="https://img.shields.io/badge/Written%20In-Python-blue?style=flat-square">
 </p>

