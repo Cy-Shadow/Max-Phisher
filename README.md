@@ -63,37 +63,59 @@ wget https://raw.githubusercontent.com/KasRoudra/MaxPhisher/main/MaxPhisher.py &
  - `sudo docker pull kasroudra/maxphisher`
  - `sudo docker run --rm -it kasroudra/maxphisher`
 
+
+### Support
+
+OS         | Support Level
+-----------|--------------
+Linux      | Excellent
+Android    | Excellent
+iPhone     | Alpha (Recommended docker)
+MacOS      | Alpha (Recommended docker)
+Windows    | Unsupported (Use docker/virtual-box/vmware)
+BSD        | Never tested
+
 #### Options
 
 ```
-usage: maxphisher.py [-h] [-p PORT] [-t TYPE] [-o OPTION] [-T TUNNELER]
-                     [-r REGION] [-S SUBDOMAIN] [-d DIRECTORY] [-f FEST]
-                     [-i YTID] [-u URL] [-s DURATION] [--noupdate]
+usage: maxphisher.py [-h] [-p PORT] [-t TYPE] [-o OPTION]
+                     [-T TUNNELER] [-r REGION] [-S SUBDOMAIN]
+                     [-d DIRECTORY] [-f FEST] [-i YTID] [-u URL]
+                     [-s DURATION] [-m MODE] [-e TROUBLESHOOT]
+                     [--nokey] [--noupdate]
 
 options:
   -h, --help            show this help message and exit
   -p PORT, --port PORT  MaxPhisher's server port [Default : 8080]
-  -t TYPE, --type TYPE  MaxPhisher's phishing type index [Default : null]
+  -t TYPE, --type TYPE  MaxPhisher's phishing type index [Default :
+                        null]
   -o OPTION, --option OPTION
-                        MaxPhisher's template index [Default : null]
+                        MaxPhisher's template index [ Default : null ]
   -T TUNNELER, --tunneler TUNNELER
-                        Tunneler to be chosen while url shortening [Default :
-                        Cloudflared]
+                        Tunneler to be chosen while url shortening
+                        [Default : Cloudflared]
   -r REGION, --region REGION
                         Region for ngrok and loclx [Default: auto]
   -S SUBDOMAIN, --subdomain SUBDOMAIN
-                        Subdomain for ngrok and loclx [Pro Account] (Default:
-                        null)
+                        Subdomain for ngrok and loclx [Pro Account]
+                        (Default: null)
   -d DIRECTORY, --directory DIRECTORY
-                        Directory where media files will be saved [Default :
-                        /sdcard/Media]
-  -f FEST, --fest FEST  Festival name for fest template [Default: Birthday]
+                        Directory where media files will be saved
+                        [Default : /sdcard/Media]
+  -f FEST, --fest FEST  Festival name for fest template [Default:
+                        Birthday]
   -i YTID, --ytid YTID  Youtube video ID for yttv template [Default :
                         6hHmkInZkMQ (NASA Video)]
-  -u URL, --url URL     Redirection url for ip-tracking or login phishing
-                        [Default : null]
+  -u URL, --url URL     Redirection url for ip-tracking or login
+                        phishing [Default : null]
   -s DURATION, --duration DURATION
-                        Media duration while capturing [Default : 5000(ms)]
+                        Media duration while capturing [Default :
+                        5000(ms)]
+  -m MODE, --mode MODE  Mode of MaxPhisher [Default: normal]
+  -e TROUBLESHOOT, --troubleshoot TROUBLESHOOT
+                        Troubleshoot a tunneler [Default: cloudflared]
+  --nokey               Use localtunnel without ssh key [Default:
+                        False]
   --noupdate            Skip update checking [Default : False]
 ```
 
@@ -150,7 +172,7 @@ If not found, php, ssh and python modoules will be installed on first run
 ## [!] Disclaimer
 ***This tool is developed for educational purposes. Here it demonstrates how phishing works. If anybody wants to gain unauthorized access to someones social media, he/she may try out this at his/her own risk. You have your own responsibilities and you are liable to any damage or violation of laws by this tool. The author is not responsible for any misuse of MaxPhisher!***
 
-### This repository is open source to help others. So if you wish to copy, consider giving credit!
+#### Want to show support? Just spread the word and smash the star button
 
 ## Credits:
 [PyPhisher](https://github.com/KasRoudra/PyPhisher)
