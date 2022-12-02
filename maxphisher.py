@@ -234,6 +234,7 @@ repo_branch = "maxfiles-main"
 # CF = Cloudflared, NR = Ngrok, LX = LocalXpose, LHR = LocalHostRun
 
 home = getenv("HOME")
+ssh_dir = f"{home}/.ssh"
 sites_dir = f"{home}/.maxsites"
 templates_file = f"{sites_dir}/templates.json"
 tunneler_dir = f"{home}/.tunneler"
@@ -831,8 +832,6 @@ def pexit():
 
 
 
-
-
 # Set up ngrok authtoken to work with ngrok links
 def nr_token():
     global nr_command
@@ -876,13 +875,16 @@ def lx_token():
 
 
 def ssh_key():
-    if key and not isfile(f"{home}/.ssh/id_rsa.pub"):
-        print(f"\n{info}Please wait for a while! Press enter three times when asked for ssh key generation{nc}\n")
-        sleep(1)
-        shell("ssh-keygen")
+    if key and not isfile(f"{ssh_dir}/id_rsa"):
+        is_no_pass = bgtask(f"ssh-keygen -y -P '' -f {ssh_dir}/id_rsa").wait()
+        if is_no_pass != 0:
+            pass
+            # delete(ssh_dir)
+        print(nc)
+        shell(f"mkdir -p {ssh_dir} && ssh-keygen -N '' -f {ssh_dir}/id_rsa")
     is_known = bgtask("ssh-keygen -F localhost.run").wait()
     if is_known != 0:
-        shell("ssh-keyscan -H localhost.run >> ~/.ssh/known_hosts", True)
+        shell(f"ssh-keyscan -H localhost.run >> {ssh_dir}/known_hosts", True)
 
 # Additional configuration for login phishing
 def set_login():
