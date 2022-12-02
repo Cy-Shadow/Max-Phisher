@@ -881,7 +881,7 @@ def ssh_key():
             pass
             # delete(ssh_dir)
         print(nc)
-        shell(f"mkdir -p {ssh_dir} && ssh-keygen -N '' -f {ssh_dir}/id_rsa")
+        shell(f"mkdir -p {ssh_dir} && ssh-keygen -N '' -t rsa -f {ssh_dir}/id_rsa")
     is_known = bgtask("ssh-keygen -F localhost.run").wait()
     if is_known != 0:
         shell(f"ssh-keyscan -H localhost.run >> {ssh_dir}/known_hosts", True)
