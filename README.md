@@ -49,7 +49,7 @@
 
 #### Or, directly run
 ```
-wget https://raw.githubusercontent.com/KasRoudra/MaxPhisher/main/MaxPhisher.py && python3 maxphisher.py
+wget https://raw.githubusercontent.com/KasRoudra/MaxPhisher/main/maxphisher.py && python3 maxphisher.py
 
 ```
 
@@ -95,9 +95,9 @@ options:
                         Tunneler to be chosen while url shortening
                         [Default : Cloudflared]
   -r REGION, --region REGION
-                        Region for ngrok and loclx [Default: auto]
+                        Region for loclx [Default: auto]
   -S SUBDOMAIN, --subdomain SUBDOMAIN
-                        Subdomain for ngrok and loclx [Pro Account]
+                        Subdomain for loclx [Pro Account]
                         (Default: null)
   -d DIRECTORY, --directory DIRECTORY
                         Directory where media files will be saved
@@ -123,7 +123,7 @@ options:
 
  - Multi platform (Supports most linux)
  - 100+ templates
- - Concurrent 4 tunneling (Ngrok, Cloudflared and LocalXpose, LocalHostRun)
+ - Concurrent 3 tunneling (Cloudflared and LocalXpose, LocalHostRun)
  - OTP Support
  - Credentials mailing
  - Easy to use
@@ -169,10 +169,19 @@ If not found, php, ssh and python modoules will be installed on first run
 ![MaxPhisher](https://raw.githubusercontent.com/KasRoudra/MaxPhisher/main/files/maxphisher.gif)
 
  
+## Solution of common issues
+ - Some secured browsers like Firefox can warn for '@' prefixed links. You should use pure links or custom link to avoid it.
+ - Termux from play store in not supported. Download termux from fdroid or github
+ - VPN or proxy prevents tunneling and even proper internet access. Turn them off you have issues.
+ - Some android requires hotspot to start Cloudflared and Loclx. If you face 'tunneling failed' in android, most probably your hotspot is turned off. Turn it on and keep it on untill you close PyPhisher.
+ - If you want mailing credentials then you need to use app password. Visit [here](https://myaccount.google.com/u/0/apppasswords) and generate an app password, put that in `files/email.json`. You may need to enable 2FA before it.
+
 ## [!] Disclaimer
 ***This tool is developed for educational purposes. Here it demonstrates how phishing works. If anybody wants to gain unauthorized access to someones social media, he/she may try out this at his/her own risk. You have your own responsibilities and you are liable to any damage or violation of laws by this tool. The author is not responsible for any misuse of MaxPhisher!***
 
-#### Want to show support? Just spread the word and smash the star button
+### [*] Support
+####  Want to show support? Just spread the word and smash the star button
+###### Donate BTC: ***3Lx8ikQQgZZpmFJzHDBuQHXzLXMeWMcZF3***
 
 ## Credits:
 [PyPhisher](https://github.com/KasRoudra/PyPhisher)
@@ -192,3 +201,4 @@ If not found, php, ssh and python modoules will be installed on first run
 
 - [![Messenger](https://img.shields.io/badge/Messenger-KasRoudra-green?style=for-the-badge&logo=messenger)](https://m.me/KasRoudra)
 
+- [![Telegram](https://img.shields.io/badge/Telegram-KasRoudra-indigo?style=for-the-badge&logo=telegram)](https://t.me/KasRoudra)
