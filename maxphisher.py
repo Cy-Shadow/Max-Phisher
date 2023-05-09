@@ -954,7 +954,8 @@ def shortener3(url):
 # Copy website files from custom location
 def customfol():
     global mask
-    has_files = input(f"\n{ask}Do you have custom site files?[y/N/b] > {green}")
+    while True:
+        has_files = input(f"\n{ask}Do you have custom site files?[y/N/b] > {green}")
         if has_files == "y":
             fol = input(f"\n{ask}Enter the directory > {green}")
             if isdir(fol):
