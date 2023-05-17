@@ -158,7 +158,7 @@ lx_help = f"""
 {blue}[4]{yellow} Visit {green}https://localxpose.io/dashboard/access{yellow} and copy your authtoken
 """
 
-packages = [ "php", "ssh" ]
+packages = [ "git", "php", "ssh" ]
 modules = [ "requests", "bs4", "rich" ]
 tunnelers = [ "cloudflared", "loclx" ]
 processes = [ "php", "ssh", "cloudflared", "loclx", "localxpose", ]
