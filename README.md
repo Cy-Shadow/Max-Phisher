@@ -42,7 +42,7 @@
  - ```cd MaxPhisher```
 
 ##### Install all modules
- - ```pip3 install -r files/requirements.txt```
+ - ```pip3 install -r files/requirements.txt --break-system-packages```
 
 ##### Run the tool
  - ```python3 maxphisher.py```
@@ -55,13 +55,15 @@ wget https://raw.githubusercontent.com/KasRoudra/MaxPhisher/main/maxphisher.py &
 
 ### Pip
  - `pip3 install maxphisher` [For Termux]
- - `sudo pip3 install maxphisher` [For Linux]
+ - `sudo pip3 install maxphisher --break-system-packages` [For Linux]
  - `maxphisher`
 
 ### Docker
 
  - `sudo docker pull kasroudra/maxphisher`
  - `sudo docker run --rm -it kasroudra/maxphisher`
+ - `sudo docker cp $(sudo docker ps | grep maxphisher | awk '{print $1}'):/root/Media media` [Run this on another terminal to copy received files from docker to media folder while keeping the container running]
+
 
 
 ### Support

