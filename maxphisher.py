@@ -1069,7 +1069,7 @@ def updater():
         # Changelog of each versions are seperated by three empty lines
         changelog = get("https://raw.githubusercontent.com/KasRoudra/MaxPhisher/main/files/changelog.log").text.split("\n\n\n")[0]
         clear(fast=True)
-        print(f"{info}\x4d\x61\x78\x50\x68\x69\x73\x68\x65\x72 has a new update!\n{info2}Current: {red}{version}\n{info}Available: {green}{git_ver}")
+        print(f"{info}\x4d\x61\x78\x50\x68\x69\x73\x68\x65\x72 has a new update!\n{info2}Current: {red}{version}\n{info}Available: {green}{gh_ver}")
         upask=input(f"\n{ask}Do you want to update \x4d\x61\x78\x50\x68\x69\x73\x68\x65\x72?[y/n] > {green}")
         if upask=="y":
             print(nc)
