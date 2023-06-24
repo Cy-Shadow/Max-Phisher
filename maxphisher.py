@@ -182,7 +182,7 @@ for module in modules:
     except ImportError:
         try:
             print(f"Installing {module}")
-            run(f"pip3 install {module}", shell=True)
+            run(f"pip3 install {module} --break-system-packages", shell=True)
         except:
             print(f"{module} cannot be installed! Install it manually by {green}'pip3 install {module}'")
             exit(1)
@@ -358,10 +358,16 @@ def is_json(myjson):
 # A simple copy function
 def copy(path1, path2):
     if isdir(path1):
-        if isdir(path2):
-             rmtree(path2)
+        for item in listdir(path1):
+            old_file = join(path1, item)
+            new_file = join(path2, item)
+            if isdir(old_file):
+                copy(old_file, new_file)
+            else:
+                makedirs(dirname(new_file), exist_ok=True)
+                copy2(old_file, new_file)
         #copytree(path1, path2)
-        shell(f"cp -r {path1} {path2}")
+        #shell(f"cp -r {path1} {path2}")
     if isfile(path1):
         if isdir(path2):
             copy2(path1, path2)
