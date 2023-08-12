@@ -125,7 +125,7 @@ options:
 
  - Multi platform (Supports most linux)
  - 100+ templates
- - Concurrent 3 tunneling (Cloudflared and LocalXpose, LocalHostRun)
+ - Concurrent 4 tunneling (Cloudflared and LocalXpose, LocalHostRun, Serveo)
  - OTP Support
  - Credentials mailing
  - Easy to use
