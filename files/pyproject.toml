@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 [tool.poetry]
 name = "MaxPhisher"
-version = "1.2.1"
+version = "1.2.2"
 readme = "README.md"
 license = "MIT"
 repository = "https://github.com/KasRoudra/MaxPhisher/"
