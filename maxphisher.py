@@ -1018,7 +1018,7 @@ def shortener3(url):
         append(e, error_file)
         res = ""
     shortened = res.split("\n")[0] if "\n" in res else res
-    if "https://" not in shortened:
+    if "http://" not in shortened and "https://" not in shortened:
         return ""
     return shortened
 
