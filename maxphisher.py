@@ -1103,7 +1103,7 @@ def masking(url):
         else:
             sprint(f"\n{error}Service not available!")
             waiter()
-    short = shortened.replace("https://", "")
+    short = shortened.replace("http://", "").replace("https://", "")
     # Remove slash and spaces from inputs
     domain = input(f"\n{ask}Enter custom domain(Example: google.com, yahoo.com > ")
     if domain == "":
